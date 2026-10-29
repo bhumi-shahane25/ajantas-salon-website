@@ -1,0 +1,208 @@
+.appointment-section {
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-light);
+}
+
+.appointment-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.appointment-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left Form Card */
+.appointment-form-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.req {
+  color: #D32F2F;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Disclaimer Box */
+.appointment-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: var(--bg-accent-subtle);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-wine);
+  margin-bottom: 24px;
+}
+
+.disclaimer-icon {
+  color: var(--color-wine);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.appointment-disclaimer p {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 1rem;
+}
+
+.submission-notice {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background-color: #EBF8F0;
+  border: 1px solid #C4EED0;
+  border-radius: var(--radius-sm);
+  color: #1A5928;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.notice-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #25D366;
+}
+
+/* Sidebar Cards */
+.appointment-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-quick-card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  padding: 28px 24px;
+}
+
+.quick-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(106, 30, 54, 0.1);
+  color: var(--color-wine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.quick-card-icon.insta {
+  background-color: rgba(225, 48, 108, 0.1);
+  color: #E1306C;
+}
+
+.contact-quick-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.contact-quick-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.quick-phone-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quick-phone-actions .btn {
+  justify-content: flex-start;
+  padding: 10px 16px;
+}
+
+.insta-link-btn {
+  display: inline-flex;
+}
+
+/* Tips Card */
+.contact-tips-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  padding: 22px 20px;
+}
+
+.tips-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-wine);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tips-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.45;
+}
+
+.tips-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-champagne);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Responsive Queries */
+@media (max-width: 960px) {
+  .appointment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .appointment-form-card {
+    padding: 24px 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

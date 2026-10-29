@@ -1,0 +1,393 @@
+/* =============================================================================
+   AJANTA'S SALON FOR HE & SHE — DESIGN SYSTEM & CORE STYLES
+   Editorial, warm, human, and authentic modern Indian salon visual identity.
+   ============================================================================= */
+
+:root {
+  /* Color Palette */
+  --bg-primary: #FAF7F2;          /* Warm Ivory */
+  --bg-secondary: #F3ECE6;        /* Soft Linen / Cream */
+  --bg-card: #FFFFFF;             /* Pure Card Background */
+  --bg-card-hover: #FCFAF8;       /* Subtle Card Hover */
+  --bg-accent-subtle: #F7EFF1;    /* Pale Dusty Rose Wash */
+  --bg-dark: #1E1217;             /* Deepest Charcoal Wine */
+  --bg-dark-card: #281B21;        /* Slightly lighter dark container */
+
+  --color-wine: #6A1E36;          /* Deep Burgundy / Primary Accent */
+  --color-wine-dark: #4F1426;     /* Deep Wine for hovers */
+  --color-wine-light: #8E2B4B;    /* Lighter Burgundy */
+  --color-rose: #C78A98;          /* Soft Dusty Rose */
+  --color-rose-light: #F4E7EB;    /* Light Rose Tint */
+  --color-rose-badge: #ECE1E4;    /* Pill Tag Rose */
+  
+  --color-champagne: #C29B53;     /* Understated Warm Champagne Gold */
+  --color-champagne-light: #EFE4CD;
+  --color-champagne-dark: #9E7B35;
+  --color-gold-border: rgba(194, 155, 83, 0.35);
+
+  --text-primary: #231F20;        /* Dark Charcoal Primary Text */
+  --text-secondary: #585054;      /* Readable Muted Body Text */
+  --text-muted: #7E7579;          /* Tertiary / Meta Text */
+  --text-inverted: #FAF7F2;       /* Text on Wine / Dark backgrounds */
+  --text-inverted-muted: #D6CBCF; /* Subdued text on Dark backgrounds */
+
+  --border-light: #EAE2DB;        /* Crisp subtle divider */
+  --border-medium: #DDD2C8;       /* Noticeable divider */
+  --border-wine: rgba(106, 30, 54, 0.18);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(35, 31, 32, 0.04);
+  --shadow-md: 0 8px 24px rgba(35, 31, 32, 0.07);
+  --shadow-lg: 0 16px 40px rgba(35, 31, 32, 0.11);
+  --shadow-wine: 0 10px 28px rgba(106, 30, 54, 0.18);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing & Sizing */
+  --container-max: 1200px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Header Height Reference */
+  --announcement-height: 38px;
+  --header-height: 74px;
+}
+
+/* Base Reset & Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* Container Utility */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Section Wrapper Utility */
+.section {
+  padding-top: 84px;
+  padding-bottom: 84px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+
+.section-alt {
+  background-color: var(--bg-secondary);
+}
+
+.section-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-inverted);
+}
+
+/* Section Header Typography */
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px auto;
+}
+
+.section-header.text-left {
+  text-align: left;
+  margin-left: 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-wine);
+  margin-bottom: 12px;
+}
+
+.section-dark .eyebrow {
+  color: var(--color-champagne);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.section-dark .section-title {
+  color: var(--text-inverted);
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.section-dark .section-subtitle {
+  color: var(--text-inverted-muted);
+}
+
+/* Standard Buttons & CTAs */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-wine);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-wine-dark);
+  box-shadow: var(--shadow-wine);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-wine);
+  border: 1.5px solid var(--color-wine);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-wine);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-champagne {
+  background-color: var(--color-champagne);
+  color: #1E1217;
+  font-weight: 700;
+}
+
+.btn-champagne:hover {
+  background-color: #D4AF37;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(194, 155, 83, 0.3);
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--text-inverted);
+  border: 1.5px solid rgba(250, 247, 242, 0.4);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(250, 247, 242, 0.1);
+  border-color: var(--text-inverted);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20BD5A;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 0.86rem;
+}
+
+/* Badge / Pill */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background-color: var(--color-rose-badge);
+  color: var(--color-wine);
+}
+
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-wine);
+  outline-offset: 3px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 7px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  background-color: #FFFFFF;
+  color: var(--text-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-wine);
+  box-shadow: 0 0 0 3px rgba(106, 30, 54, 0.1);
+  outline: none;
+}
+
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+  border-color: #D32F2F;
+  background-color: #FFF9F9;
+}
+
+.form-error-text {
+  font-size: 0.8rem;
+  color: #D32F2F;
+  margin-top: 5px;
+}
+
+/* Graceful Image Fallback Component Wrapper */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.image-wrapper.loaded img {
+  opacity: 1;
+}
+
+.image-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--color-rose-light) 100%);
+  color: var(--color-wine);
+  text-align: center;
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

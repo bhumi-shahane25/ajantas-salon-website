@@ -1,0 +1,136 @@
+/* Floating WhatsApp Button */
+.floating-wa-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), bottom 0.3s ease;
+}
+
+.floating-wa-btn:hover {
+  transform: scale(1.06);
+}
+
+.wa-icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.floating-wa-btn:hover .wa-icon-circle {
+  background-color: #20BD5A;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.55);
+}
+
+.wa-tooltip {
+  background-color: var(--bg-dark);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.floating-wa-btn:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Discreet Mobile Sticky Bottom Bar */
+.mobile-sticky-action-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-medium);
+  box-shadow: 0 -4px 18px rgba(35, 31, 32, 0.08);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)) 16px;
+  z-index: 98;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-sticky-action-bar.visible {
+  transform: translateY(0);
+}
+
+.mobile-sticky-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.mobile-sticky-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobile-sticky-btn.secondary {
+  flex: 0.35;
+  background-color: var(--bg-secondary);
+  color: var(--color-wine);
+  border: 1.5px solid var(--border-medium);
+}
+
+.mobile-sticky-btn.primary {
+  flex: 0.65;
+  background-color: var(--color-wine);
+  color: #FFFFFF;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .wa-tooltip {
+    display: none;
+  }
+
+  .mobile-sticky-action-bar {
+    display: block;
+  }
+
+  .floating-wa-btn {
+    bottom: 20px;
+    right: 18px;
+  }
+
+  .floating-wa-btn.offset-for-mobile-bar {
+    bottom: 74px;
+  }
+
+  .wa-icon-circle {
+    width: 48px;
+    height: 48px;
+  }
+}

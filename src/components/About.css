@@ -1,0 +1,155 @@
+.about-section {
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 64px;
+}
+
+/* Two-image collage */
+.about-visuals {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 40px;
+}
+
+.about-image-primary-wrap {
+  position: relative;
+  width: 78%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+}
+
+.about-heritage-stamp {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background-color: var(--color-wine);
+  color: var(--text-inverted);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-champagne);
+}
+
+.stamp-year {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.stamp-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--color-champagne-light);
+}
+
+.about-image-secondary-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 48%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid var(--bg-primary);
+  z-index: 2;
+}
+
+/* Text Content */
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-heading {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  color: var(--text-primary);
+  margin-bottom: 22px;
+  line-height: 1.2;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.about-paragraph {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.about-commitments {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 34px;
+  padding: 18px 20px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-wine);
+}
+
+.about-commitment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.commitment-icon {
+  color: var(--color-wine);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-visuals {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-image-primary-wrap {
+    width: 84%;
+  }
+
+  .about-image-secondary-wrap {
+    width: 52%;
+  }
+
+  .about-heading {
+    font-size: 1.95rem;
+  }
+}
