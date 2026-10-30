@@ -1,17 +1,34 @@
 import { ArrowUp, Phone, MapPin, MessageCircle } from 'lucide-react'
 import { InstagramIcon } from './Icons'
 import { salonData } from '../data/salonData'
+import { useNavigation } from '../context/NavigationContext'
 import './Footer.css'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  const { name, tagline, establishmentYear } = salonData.brand
+  const { name, tagline, establishmentYear, logo, logoAlt } = salonData.brand
   const { primaryAddress } = salonData.location
   const { primaryPhoneDisplay, primaryPhoneTel, secondaryPhoneDisplay, secondaryPhoneTel, whatsappNumber, instagramUrl, instagramHandle, businessProfileUrl } = salonData.contact
   const { services } = salonData
+  const { navigate } = useNavigation()
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleNav = (e, path) => {
+    e.preventDefault()
+    navigate(path)
+  }
+
+  const handleServiceNav = (e, serviceId) => {
+    e.preventDefault()
+    navigate('/services', { scrollTo: serviceId })
+  }
+
+  const handleBookNow = (e) => {
+    e.preventDefault()
+    navigate('/contact', { scrollTo: 'appointment' })
   }
 
   return (
@@ -24,9 +41,9 @@ export default function Footer() {
             <p>Connect with our team to check convenient slots for today or this weekend.</p>
           </div>
           <div className="footer-cta-actions">
-            <a href="#appointment" className="btn btn-champagne">
+            <button type="button" onClick={handleBookNow} className="btn btn-champagne">
               <span>Book Appointment</span>
-            </a>
+            </button>
             <a
               href={`https://wa.me/${whatsappNumber}`}
               target="_blank"
@@ -43,12 +60,26 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="footer-main">
         <div className="container footer-grid">
-          {/* Brand Column */}
+          {/* Brand Column with Actual Logo */}
           <div className="footer-col footer-col-brand">
-            <a href="#home" className="footer-brand-title">
-              {name}
-            </a>
-            <span className="footer-tagline">{tagline}</span>
+            <div className="footer-brand-header">
+              <div className="footer-logo-frame">
+                <img
+                  src={logo}
+                  alt={logoAlt}
+                  className="footer-logo-img"
+                  width="72"
+                  height="72"
+                  loading="lazy"
+                />
+              </div>
+              <div className="footer-brand-meta">
+                <span className="footer-brand-title">{name}</span>
+                <span className="footer-tagline">{tagline}</span>
+                <span className="footer-est-badge">ESTABLISHED {establishmentYear} • NASHIK</span>
+              </div>
+            </div>
+
             <p className="footer-bio">
               Thoughtful hair and beauty care to help you look and feel your best. Serving Nashik with dedicated unisex styling, bridal artistry, and beauty academy training since {establishmentYear}.
             </p>
@@ -71,23 +102,21 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="footer-profile-link"
               >
-                Business Profile
+                Verified Business Profile
               </a>
             </div>
           </div>
 
-          {/* Quick Navigation Links */}
+          {/* Quick Multi-Page Navigation Links */}
           <div className="footer-col">
             <h4 className="footer-col-title">Navigation</h4>
             <ul className="footer-links-list">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Our Salon</a></li>
-              <li><a href="#services">Services & Pricing</a></li>
-              <li><a href="#bridal">Bridal Artistry</a></li>
-              <li><a href="#academy">Beauty Academy</a></li>
-              <li><a href="#gallery">Gallery & Work</a></li>
-              <li><a href="#appointment">Book an Appointment</a></li>
-              <li><a href="#contact">Location & Hours</a></li>
+              <li><a href="/" onClick={(e) => handleNav(e, '/')}>Home</a></li>
+              <li><a href="/about" onClick={(e) => handleNav(e, '/about')}>About Us</a></li>
+              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Services & Pricing</a></li>
+              <li><a href="/gallery" onClick={(e) => handleNav(e, '/gallery')}>Inspiration Gallery</a></li>
+              <li><a href="/contact" onClick={(e) => handleNav(e, '/contact')}>Contact & Location</a></li>
+              <li><a href="/contact" onClick={handleBookNow}>Book an Appointment</a></li>
             </ul>
           </div>
 
@@ -97,9 +126,16 @@ export default function Footer() {
             <ul className="footer-links-list">
               {services.map((s) => (
                 <li key={s.id}>
-                  <a href={`#${s.id}`}>{s.title}</a>
+                  <a href={`/services#${s.id}`} onClick={(e) => handleServiceNav(e, s.id)}>
+                    {s.title}
+                  </a>
                 </li>
               ))}
+              <li>
+                <a href="/services#academy" onClick={(e) => handleServiceNav(e, 'academy')}>
+                  Beauty Academy Courses
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -138,7 +174,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p className="footer-copyright">
-            © {currentYear} {name}. All rights reserved. • Established in 2007, Nashik, Maharashtra.
+            © {currentYear} {name}. All rights reserved. • Established in {establishmentYear}, Sharanpur Road, Nashik.
           </p>
 
           <button

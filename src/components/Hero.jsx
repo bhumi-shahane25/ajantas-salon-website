@@ -1,11 +1,13 @@
 import { ArrowRight, Calendar, Sparkles, MapPin, Award } from 'lucide-react'
 import { salonData } from '../data/salonData'
+import { useNavigation } from '../context/NavigationContext'
 import ImageWithFallback from './ImageWithFallback'
 import './Hero.css'
 
 export default function Hero() {
   const { heroEyebrow, heroHeadline, heroSubheadline } = salonData.brand
   const { shortAddress } = salonData.location
+  const { navigate } = useNavigation()
 
   return (
     <section id="home" className="hero-section" aria-label="Hero Section">
@@ -31,15 +33,23 @@ export default function Hero() {
           </p>
 
           <div className="hero-cta-group">
-            <a href="#appointment" className="btn btn-primary">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => navigate('/contact', { scrollTo: 'appointment' })}
+            >
               <Calendar size={17} aria-hidden="true" />
               <span>Book an Appointment</span>
-            </a>
+            </button>
             
-            <a href="#services" className="btn btn-secondary">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => navigate('/services')}
+            >
               <span>Explore Our Services</span>
               <ArrowRight size={16} aria-hidden="true" />
-            </a>
+            </button>
           </div>
 
           {/* Natural verified details bar */}

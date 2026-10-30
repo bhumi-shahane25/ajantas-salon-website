@@ -1,28 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Calendar, Send, Phone, AlertCircle, CheckCircle2, Clock } from 'lucide-react'
 import { InstagramIcon } from './Icons'
 import { salonData } from '../data/salonData'
+import { useNavigation } from '../context/NavigationContext'
 import './AppointmentForm.css'
 
 export default function AppointmentForm({ selectedService }) {
   const { serviceCategories, timeSlots, disclaimer } = salonData.appointmentForm
   const { primaryPhoneDisplay, primaryPhoneTel, secondaryPhoneDisplay, secondaryPhoneTel, whatsappNumber, instagramUrl, instagramHandle } = salonData.contact
+  const { selectedService: contextService } = useNavigation()
+  const activeService = selectedService || contextService
 
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    service: selectedService || serviceCategories[0],
+    service: activeService || serviceCategories[0],
     date: '',
     time: timeSlots[0],
     message: ''
   })
 
-  // Synchronize when selectedService changes from outside
-  useState(() => {
-    if (selectedService) {
-      setFormData((prev) => ({ ...prev, service: selectedService }))
+  // Synchronize when activeService changes from navigation
+  useEffect(() => {
+    if (activeService) {
+      setFormData((prev) => ({ ...prev, service: activeService }))
     }
-  }, [selectedService])
+  }, [activeService])
 
   const [errors, setErrors] = useState({})
   const [submissionState, setSubmissionState] = useState(null) // 'prepared' or null

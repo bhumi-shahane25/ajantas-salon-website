@@ -1,23 +1,32 @@
 import { MessageCircle, Check, HelpCircle } from 'lucide-react'
 import { salonData } from '../data/salonData'
+import { useNavigation } from '../context/NavigationContext'
 import ImageWithFallback from './ImageWithFallback'
 import './Services.css'
 
-export default function Services({ onSelectService }) {
+export default function Services() {
   const { services } = salonData
   const { whatsappNumber } = salonData.contact
+  const { navigate } = useNavigation()
 
   const handleEnquireWhatsApp = (serviceTitle) => {
     const text = encodeURIComponent(`Hello Ajanta's Salon, I would like to enquire about details and pricing for: ${serviceTitle}.`)
     window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank', 'noopener,noreferrer')
   }
 
+  const handleBookService = (serviceTitle) => {
+    navigate('/contact', {
+      scrollTo: 'appointment',
+      service: serviceTitle,
+    })
+  }
+
   return (
-    <section id="services" className="section section-alt services-section" aria-label="Salon Services">
+    <section id="services-list" className="section section-alt services-section" aria-label="Salon Services Menu">
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="eyebrow">OUR EXPERTISE</span>
+          <span className="eyebrow">OUR SERVICE MENU</span>
           <h2 className="section-title">Thoughtfully Crafted Services</h2>
           <p className="section-subtitle">
             Personalised hair, beauty, and grooming care delivered with genuine attention to detail for men and women.
@@ -27,8 +36,6 @@ export default function Services({ onSelectService }) {
         {/* Editorial Varied Grid */}
         <div className="services-editorial-grid">
           {services.map((service, index) => {
-            // Give varied span patterns to avoid identical cards:
-            // Items 0 and 3 are prominent wide feature layouts
             const isWide = index === 0 || index === 3
 
             return (
@@ -64,13 +71,7 @@ export default function Services({ onSelectService }) {
                     <button
                       type="button"
                       className="btn btn-secondary btn-sm"
-                      onClick={() => {
-                        if (onSelectService) {
-                          onSelectService(service.title)
-                        }
-                        const el = document.getElementById('appointment')
-                        if (el) el.scrollIntoView({ behavior: 'smooth' })
-                      }}
+                      onClick={() => handleBookService(service.title)}
                     >
                       Book Enquiry
                     </button>

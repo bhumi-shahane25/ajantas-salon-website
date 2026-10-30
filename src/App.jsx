@@ -1,67 +1,62 @@
-import { useState } from 'react'
+import { NavigationProvider, useNavigation } from './context/NavigationContext'
 import AnnouncementBar from './components/AnnouncementBar'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import TrustStrip from './components/TrustStrip'
-import About from './components/About'
-import Services from './components/Services'
-import SignatureSection from './components/SignatureSection'
-import Gallery from './components/Gallery'
-import Academy from './components/Academy'
-import AppointmentForm from './components/AppointmentForm'
-import LocationSection from './components/LocationSection'
 import Footer from './components/Footer'
 import FloatingActions from './components/FloatingActions'
 
-export default function App() {
-  const [selectedServiceForBooking, setSelectedServiceForBooking] = useState(null)
+// Five Dedicated Multi-Page Views
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ServicesPage from './pages/ServicesPage'
+import GalleryPage from './pages/GalleryPage'
+import ContactPage from './pages/ContactPage'
 
-  const handleSelectService = (serviceTitle) => {
-    setSelectedServiceForBooking(serviceTitle)
+function AppContent() {
+  const { currentPath } = useNavigation()
+
+  // Route matching with clean normalization
+  const renderCurrentPage = () => {
+    switch (currentPath) {
+      case '/about':
+        return <AboutPage key="about" />
+      case '/services':
+        return <ServicesPage key="services" />
+      case '/gallery':
+        return <GalleryPage key="gallery" />
+      case '/contact':
+        return <ContactPage key="contact" />
+      case '/':
+      default:
+        return <HomePage key="home" />
+    }
   }
 
   return (
     <div className="site-wrapper">
-      {/* Top Slim Announcement Bar */}
+      {/* 1. Top Slim Announcement Bar with telephone shortcut */}
       <AnnouncementBar />
 
-      {/* Main Sticky Header & Navigation */}
+      {/* 2. Main Sticky Header with Actual Salon Logo & Multi-Page Navigation */}
       <Navbar />
 
-      <main id="main-content">
-        {/* 1. Hero Section */}
-        <Hero />
-
-        {/* 2. Trust & Heritage Introduction Strip */}
-        <TrustStrip />
-
-        {/* 3. About Section */}
-        <About />
-
-        {/* 4. Complete Services Section with Editorial Layout */}
-        <Services onSelectService={handleSelectService} />
-
-        {/* 5. Signature Showcase: Bridal & Occasion Styling */}
-        <SignatureSection />
-
-        {/* 6. Curated Beauty & Hair Gallery with Interactive Lightbox */}
-        <Gallery />
-
-        {/* 7. Beauty Academy Section */}
-        <Academy />
-
-        {/* 8. Appointment & Direct Contact Section */}
-        <AppointmentForm selectedService={selectedServiceForBooking} />
-
-        {/* 9. Location & Directions Section */}
-        <LocationSection />
+      {/* 3. Multi-Page View Container with smooth transition */}
+      <main id="main-content" role="main">
+        {renderCurrentPage()}
       </main>
 
-      {/* 10. Refined Site Footer */}
+      {/* 4. Compact, Prestigious Site Footer with Actual Logo */}
       <Footer />
 
-      {/* Floating WhatsApp and Mobile Quick Actions */}
+      {/* 5. Floating WhatsApp shortcut and Mobile Sticky Booking Bar */}
       <FloatingActions />
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <NavigationProvider>
+      <AppContent />
+    </NavigationProvider>
   )
 }

@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Phone, Calendar } from 'lucide-react'
 import { salonData } from '../data/salonData'
+import { useNavigation } from '../context/NavigationContext'
 import './Navbar.css'
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const { name, tagline } = salonData.brand
+  const { name, tagline, logo, logoAlt } = salonData.brand
   const { primaryPhoneTel, primaryPhoneDisplay } = salonData.contact
+  const { currentPath, navigate } = useNavigation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,35 +44,76 @@ export default function Navbar() {
     setMobileMenuOpen(false)
   }
 
+  const handleNavClick = (e, path) => {
+    e.preventDefault()
+    navigate(path)
+    closeMenu()
+  }
+
+  const handleBookClick = (e) => {
+    e.preventDefault()
+    navigate('/contact', { scrollTo: 'appointment' })
+    closeMenu()
+  }
+
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Bridal', href: '#bridal' },
-    { label: 'Academy', href: '#academy' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'HOME', path: '/' },
+    { label: 'ABOUT US', path: '/about' },
+    { label: 'SERVICES', path: '/services' },
+    { label: 'GALLERY', path: '/gallery' },
+    { label: 'CONTACT', path: '/contact' },
   ]
+
+  const isLinkActive = (path) => {
+    if (path === '/') return currentPath === '/'
+    return currentPath === path || currentPath.startsWith(path + '/')
+  }
 
   return (
     <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
-        {/* Salon Brand Typographic Wordmark */}
-        <a href="#home" className="navbar-brand" onClick={closeMenu}>
-          <span className="brand-title">Ajanta's</span>
-          <span className="brand-subtitle">{tagline}</span>
+        {/* Salon Brand with Actual Logo */}
+        <a
+          href="/"
+          className="navbar-brand"
+          onClick={(e) => handleNavClick(e, '/')}
+          aria-label={`${name} - Return to Homepage`}
+        >
+          <div className="brand-logo-frame">
+            <img
+              src={logo}
+              alt={logoAlt}
+              className="brand-logo-img"
+              width="48"
+              height="48"
+              loading="eager"
+            />
+          </div>
+          <div className="brand-text-wrap">
+            <span className="brand-title">Ajanta's</span>
+            <span className="brand-subtitle">{tagline}</span>
+          </div>
         </a>
 
         {/* Desktop Navigation Links */}
         <nav className="desktop-nav" aria-label="Main Navigation">
           <ul className="nav-list">
-            {navLinks.map((link) => (
-              <li key={link.href} className="nav-item">
-                <a href={link.href} className="nav-link">
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const active = isLinkActive(link.path)
+              return (
+                <li key={link.path} className="nav-item">
+                  <a
+                    href={link.path}
+                    className={`nav-link ${active ? 'active' : ''}`}
+                    onClick={(e) => handleNavClick(e, link.path)}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    <span>{link.label}</span>
+                    {active && <span className="active-dot" aria-hidden="true" />}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
         </nav>
 
@@ -81,13 +124,17 @@ export default function Navbar() {
             className="nav-action-tel"
             aria-label={`Call salon: ${primaryPhoneDisplay}`}
           >
-            <Phone size={15} aria-hidden="true" />
+            <Phone size={14} aria-hidden="true" />
             <span className="tel-text">{primaryPhoneDisplay}</span>
           </a>
 
-          <a href="#appointment" className="btn btn-primary btn-sm nav-cta">
+          <a
+            href="/contact"
+            className="btn btn-primary btn-sm nav-cta"
+            onClick={handleBookClick}
+          >
             <Calendar size={15} aria-hidden="true" />
-            <span>Book Appointment</span>
+            <span>Book an Appointment</span>
           </a>
 
           {/* Mobile Menu Toggle Button */}
@@ -109,35 +156,53 @@ export default function Navbar() {
         aria-hidden={!mobileMenuOpen}
       >
         <div className="mobile-drawer-inner">
+          {/* Mobile Logo Showcase */}
           <div className="mobile-drawer-brand">
-            <span className="brand-title">Ajanta's</span>
-            <span className="brand-subtitle">{tagline}</span>
+            <div className="mobile-logo-frame">
+              <img
+                src={logo}
+                alt={logoAlt}
+                className="mobile-logo-img"
+                width="64"
+                height="64"
+              />
+            </div>
+            <div className="mobile-brand-meta">
+              <span className="brand-title">Ajanta's</span>
+              <span className="brand-subtitle">{tagline}</span>
+              <span className="mobile-est-tag">Estd. 2007 • Nashik</span>
+            </div>
           </div>
 
           <nav className="mobile-nav" aria-label="Mobile Navigation">
             <ul className="mobile-nav-list">
-              {navLinks.map((link) => (
-                <li key={link.href} className="mobile-nav-item">
-                  <a
-                    href={link.href}
-                    className="mobile-nav-link"
-                    onClick={closeMenu}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const active = isLinkActive(link.path)
+                return (
+                  <li key={link.path} className="mobile-nav-item">
+                    <a
+                      href={link.path}
+                      className={`mobile-nav-link ${active ? 'active' : ''}`}
+                      onClick={(e) => handleNavClick(e, link.path)}
+                      aria-current={active ? 'page' : undefined}
+                    >
+                      <span>{link.label}</span>
+                      {active && <span className="mobile-active-badge">Current</span>}
+                    </a>
+                  </li>
+                )
+              })}
             </ul>
           </nav>
 
           <div className="mobile-drawer-footer">
             <a
-              href="#appointment"
+              href="/contact"
               className="btn btn-primary btn-full"
-              onClick={closeMenu}
+              onClick={handleBookClick}
             >
               <Calendar size={16} aria-hidden="true" />
-              <span>Book Appointment</span>
+              <span>Book an Appointment</span>
             </a>
 
             <a
@@ -155,7 +220,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      
+
       {/* Overlay Backdrop for Mobile Menu */}
       {mobileMenuOpen && (
         <div

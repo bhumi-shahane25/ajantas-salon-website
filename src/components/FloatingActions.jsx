@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { MessageCircle, Phone, Calendar } from 'lucide-react'
 import { salonData } from '../data/salonData'
+import { useNavigation } from '../context/NavigationContext'
 import './FloatingActions.css'
 
 export default function FloatingActions() {
   const { whatsappNumber, primaryPhoneTel } = salonData.contact
+  const { currentPath, navigate } = useNavigation()
   const [showStickyBar, setShowStickyBar] = useState(false)
   const [isAtAppointment, setIsAtAppointment] = useState(false)
 
@@ -18,17 +20,23 @@ export default function FloatingActions() {
       const appointmentEl = document.getElementById('appointment')
       if (appointmentEl) {
         const rect = appointmentEl.getBoundingClientRect()
-        // If appointment form is in viewport
         const inView = rect.top < window.innerHeight && rect.bottom > 150
         setIsAtAppointment(inView)
+      } else {
+        setIsAtAppointment(false)
       }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [currentPath])
 
   const defaultWaText = encodeURIComponent("Hello Ajanta's Salon, I would like to enquire about your services and appointment availability.")
+
+  const handleBookClick = (e) => {
+    e.preventDefault()
+    navigate('/contact', { scrollTo: 'appointment' })
+  }
 
   return (
     <>
@@ -62,14 +70,15 @@ export default function FloatingActions() {
             <span>Call</span>
           </a>
 
-          <a
-            href="#appointment"
+          <button
+            type="button"
             className="mobile-sticky-btn primary"
+            onClick={handleBookClick}
             aria-label="Jump to appointment enquiry form"
           >
             <Calendar size={16} aria-hidden="true" />
             <span>Book Appointment</span>
-          </a>
+          </button>
         </div>
       </div>
     </>

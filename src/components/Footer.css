@@ -55,23 +55,65 @@
   flex-direction: column;
 }
 
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.footer-logo-frame {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  background-color: #000000;
+  border: 1.5px solid var(--color-champagne);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 2px;
+}
+
+.footer-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-brand-meta {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer-brand-title {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-inverted);
   line-height: 1.2;
 }
 
 .footer-tagline {
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-champagne);
   font-weight: 600;
   margin-top: 3px;
-  margin-bottom: 16px;
   display: block;
+}
+
+.footer-est-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-inverted-muted);
+  font-weight: 600;
+  margin-top: 4px;
 }
 
 .footer-bio {
