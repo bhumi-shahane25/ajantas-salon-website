@@ -236,6 +236,7 @@
   width: 100%;
 }
 
+/* Responsive queries */
 @media (max-width: 1024px) {
   .featured-services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -248,11 +249,23 @@
 }
 
 @media (max-width: 768px) {
+  .home-intro-section {
+    padding: 44px 0;
+  }
+
+  .home-featured-services {
+    padding: 48px 0;
+  }
+
+  .home-booking-banner {
+    padding: 44px 0;
+  }
+
   .home-booking-card {
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px 24px;
-    gap: 24px;
+    padding: 30px 22px;
+    gap: 22px;
   }
 
   .home-booking-actions {
@@ -261,6 +274,62 @@
 
   .featured-services-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
+  }
+
+  .home-services-bottom-cta .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-intro-heading {
+    font-size: clamp(1.6rem, 6vw, 1.95rem);
+    line-height: 1.25;
+  }
+
+  .home-intro-lead {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .home-intro-card {
+    padding: 22px 18px;
+  }
+
+  .home-booking-card {
+    padding: 24px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .home-booking-title {
+    font-size: 1.6rem;
+  }
+
+  .home-booking-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .home-intro-badges {
+    gap: 7px;
+  }
+
+  .home-intro-pill {
+    font-size: 0.76rem;
+    padding: 5px 11px;
+  }
+}
+
+@media (max-width: 375px) {
+  .home-intro-heading {
+    font-size: 1.5rem;
+  }
+
+  .home-booking-title {
+    font-size: 1.45rem;
+  }
+
+  .featured-service-body {
+    padding: 18px 14px;
   }
 }

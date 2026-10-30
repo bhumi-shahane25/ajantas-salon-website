@@ -160,7 +160,9 @@
   flex-shrink: 0;
 }
 
-/* Responsive Queries */
+/* =============================================================================
+   RESPONSIVE SERVICES QUERIES
+   ============================================================================= */
 @media (max-width: 960px) {
   .service-card-wide {
     grid-template-columns: 1fr;
@@ -170,7 +172,8 @@
 @media (max-width: 768px) {
   .services-editorial-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 22px;
+    margin-bottom: 40px;
   }
 
   .service-card,
@@ -179,17 +182,77 @@
   }
 
   .service-card-body {
-    padding: 20px;
+    padding: 22px 18px;
+  }
+
+  .service-title {
+    font-size: 1.35rem;
   }
 
   .pricing-note-banner {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-    padding: 20px;
+    padding: 22px 18px;
   }
 
   .pricing-note-btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-body {
+    padding: 18px 16px;
+  }
+
+  .service-title {
+    font-size: 1.25rem;
+  }
+
+  .service-summary {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+  }
+
+  .service-items-list {
+    gap: 7px;
+    margin-bottom: 18px;
+  }
+
+  .service-item {
+    font-size: 0.84rem;
+  }
+
+  .service-card-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .service-card-actions .btn {
+    flex: 1 1 auto;
+    min-width: 120px;
+    padding: 10px 14px;
+    font-size: 0.84rem;
+  }
+
+  .pricing-note-banner {
+    padding: 18px 14px;
+  }
+
+  .pricing-note-text h4 {
+    font-size: 1.05rem;
+  }
+
+  .pricing-note-text p {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .service-card-actions .btn {
+    min-width: 110px;
+    padding: 9px 12px;
+    font-size: 0.8rem;
   }
 }

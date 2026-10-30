@@ -132,10 +132,11 @@
   font-style: italic;
 }
 
+/* Responsive Queries */
 @media (max-width: 960px) {
   .signature-layout {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .signature-visual {
@@ -146,12 +147,49 @@
 }
 
 @media (max-width: 540px) {
+  .signature-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  .signature-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+  }
+
+  .signature-desc {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .signature-highlights-list {
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+
+  .signature-highlight-item {
+    font-size: 0.88rem;
+    gap: 10px;
+  }
+
   .signature-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
   .signature-actions .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .signature-title {
+    font-size: 1.7rem;
+  }
+
+  .signature-highlight-item {
+    font-size: 0.84rem;
   }
 }

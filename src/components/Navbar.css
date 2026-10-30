@@ -2,9 +2,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: rgba(250, 247, 242, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(250, 247, 242, 0.96);
   border-bottom: 1px solid var(--border-light);
   z-index: 100;
   transition: all 0.25s ease;
@@ -21,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
-  gap: 20px;
+  gap: 16px;
 }
 
 /* Brand Identity with Actual Logo */
@@ -31,6 +29,7 @@
   gap: 12px;
   text-decoration: none;
   cursor: pointer;
+  flex-shrink: 0;
   transition: transform 0.2s ease;
 }
 
@@ -40,8 +39,8 @@
 
 /* Jewel-like frame for the black-and-gold official logo */
 .brand-logo-frame {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-sm);
   background-color: #000000;
   border: 1px solid rgba(194, 155, 83, 0.45);
@@ -101,14 +100,14 @@
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 24px;
   list-style: none;
 }
 
 .nav-link {
   font-size: 0.86rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: var(--text-primary);
   position: relative;
   padding: 8px 2px;
@@ -116,6 +115,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -156,11 +156,12 @@
   display: inline-block;
 }
 
-/* Navbar Actions */
+/* Navbar Actions (Desktop & Mobile) */
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .nav-action-tel {
@@ -175,6 +176,7 @@
   background-color: rgba(243, 236, 230, 0.8);
   border: 1px solid var(--border-light);
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .nav-action-tel:hover {
@@ -183,14 +185,23 @@
   border-color: var(--color-rose);
 }
 
+/* Appointment CTA Button (Visible on Desktop & Mobile) */
 .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   font-size: 0.86rem;
+  font-weight: 600;
   padding: 10px 18px;
   background-color: var(--color-wine);
   color: #FFFFFF;
-  border: 1px solid rgba(194, 155, 83, 0.3);
+  border: 1px solid rgba(194, 155, 83, 0.35);
   box-shadow: 0 4px 14px rgba(106, 30, 54, 0.2);
+  border-radius: var(--radius-sm);
   transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-cta:hover {
@@ -199,37 +210,48 @@
   transform: translateY(-1px);
 }
 
-/* Mobile Toggle */
+.nav-cta-text-short {
+  display: none;
+}
+
+.nav-cta-text-full {
+  display: inline;
+}
+
+/* Working Mobile Hamburger Button */
 .mobile-toggle-btn {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   color: var(--color-wine);
   border-radius: var(--radius-sm);
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-medium);
-  transition: background-color 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .mobile-toggle-btn:hover {
   background-color: var(--color-rose-light);
+  border-color: var(--color-wine);
 }
 
-/* Mobile Drawer */
+/* Mobile Drawer Menu */
 .mobile-drawer {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 84%;
-  max-width: 340px;
+  width: 86%;
+  max-width: 330px;
   background-color: var(--bg-primary);
-  box-shadow: -8px 0 32px rgba(35, 31, 32, 0.2);
+  box-shadow: -8px 0 36px rgba(35, 31, 32, 0.25);
   transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 105;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1005;
   display: flex;
   flex-direction: column;
 }
@@ -242,22 +264,31 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 28px 22px;
+  padding: 22px 18px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile Drawer Header */
+.mobile-drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .mobile-drawer-brand {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-light);
+  gap: 12px;
 }
 
 .mobile-logo-frame {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-sm);
   background-color: #000000;
   border: 1.5px solid var(--color-champagne);
@@ -283,44 +314,70 @@
 
 .mobile-drawer-brand .brand-title {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--color-wine);
+  line-height: 1.1;
 }
 
 .mobile-drawer-brand .brand-subtitle {
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-secondary);
+  font-weight: 600;
+  margin-top: 2px;
 }
 
 .mobile-est-tag {
   font-size: 0.68rem;
   color: var(--color-champagne-dark);
   font-weight: 600;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
+.mobile-drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.mobile-drawer-close:hover {
+  background-color: var(--color-rose-light);
+  color: var(--color-wine);
+}
+
+/* Mobile Nav List */
 .mobile-nav-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .mobile-nav-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: var(--text-primary);
   padding: 12px 14px;
   border-radius: var(--radius-sm);
   background-color: transparent;
   transition: all 0.2s ease;
+  min-height: 46px;
 }
 
 .mobile-nav-link:hover {
@@ -332,11 +389,25 @@
   background-color: rgba(106, 30, 54, 0.08);
   color: var(--color-wine);
   font-weight: 700;
-  border-left: 3px solid var(--color-wine);
+  border-left: 3.5px solid var(--color-wine);
+}
+
+.mobile-nav-label {
+  display: block;
+}
+
+.mobile-nav-arrow {
+  color: var(--color-champagne-dark);
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.mobile-nav-link:hover .mobile-nav-arrow {
+  transform: translateX(3px);
 }
 
 .mobile-active-badge {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background-color: var(--color-wine);
@@ -345,9 +416,11 @@
   border-radius: var(--radius-full);
 }
 
+/* Mobile Drawer Footer Actions */
 .mobile-drawer-footer {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -358,13 +431,23 @@
   justify-content: center;
 }
 
+.mobile-drawer-book-btn {
+  padding: 12px 16px;
+  font-size: 0.92rem;
+}
+
+.mobile-drawer-call-btn {
+  padding: 11px 16px;
+  font-size: 0.88rem;
+}
+
 .mobile-location-tag {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 /* Backdrop */
@@ -372,14 +455,19 @@
   position: fixed;
   inset: 0;
   background-color: rgba(30, 18, 23, 0.55);
-  backdrop-filter: blur(3px);
-  z-index: 104;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1004;
 }
 
-/* Responsive queries */
-@media (max-width: 1024px) {
+/* =============================================================================
+   RESPONSIVE BREAKPOINTS (375px, 390px, 430px, 768px, 1024px)
+   Desktop layout is preserved; mobile header is refined.
+   ============================================================================= */
+
+@media (max-width: 1040px) {
   .nav-list {
-    gap: 18px;
+    gap: 16px;
   }
 }
 
@@ -397,8 +485,118 @@
   }
 }
 
-@media (max-width: 520px) {
-  .nav-cta {
+/* Screen widths <= 768px (Tablets & Large Phones like 430px) */
+@media (max-width: 768px) {
+  .navbar-container {
+    height: 66px;
+    gap: 10px;
+  }
+
+  .nav-cta-text-full {
     display: none;
+  }
+
+  .nav-cta-text-short {
+    display: inline;
+  }
+
+  .nav-cta {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    gap: 5px;
+  }
+
+  .brand-logo-frame {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-title {
+    font-size: 1.4rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* Screen widths <= 430px (e.g. iPhone 14 Pro Max, iPhone 15 Plus) */
+@media (max-width: 430px) {
+  .navbar-container {
+    height: 64px;
+    padding-left: 14px;
+    padding-right: 14px;
+    gap: 8px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .brand-logo-frame {
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+  }
+
+  .brand-title {
+    font-size: 1.3rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.56rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-cta {
+    padding: 7px 11px;
+    font-size: 0.8rem;
+  }
+
+  .mobile-toggle-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Screen widths <= 375px (e.g. iPhone SE, iPhone 12/13 Mini) */
+@media (max-width: 375px) {
+  .navbar-container {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 6px;
+  }
+
+  .navbar-brand {
+    gap: 8px;
+  }
+
+  .brand-logo-frame {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-title {
+    font-size: 1.22rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+  }
+
+  .navbar-actions {
+    gap: 6px;
+  }
+
+  .nav-cta {
+    padding: 6px 9px;
+    font-size: 0.76rem;
+  }
+
+  .mobile-toggle-btn {
+    width: 36px;
+    height: 36px;
   }
 }

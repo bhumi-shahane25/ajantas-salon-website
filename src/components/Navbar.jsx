@@ -14,7 +14,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      setIsScrolled(window.scrollY > 15)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -38,6 +38,9 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = ''
     }
+    return () => {
+      document.body.style.overflow = ''
+    }
   }, [mobileMenuOpen])
 
   const closeMenu = () => {
@@ -57,11 +60,11 @@ export default function Navbar() {
   }
 
   const navLinks = [
-    { label: 'HOME', path: '/' },
-    { label: 'ABOUT US', path: '/about' },
-    { label: 'SERVICES', path: '/services' },
-    { label: 'GALLERY', path: '/gallery' },
-    { label: 'CONTACT', path: '/contact' },
+    { label: 'Home', path: '/' },
+    { label: 'About Us', path: '/about' },
+    { label: 'Services', path: '/services' },
+    { label: 'Gallery', path: '/gallery' },
+    { label: 'Contact', path: '/contact' },
   ]
 
   const isLinkActive = (path) => {
@@ -84,8 +87,8 @@ export default function Navbar() {
               src={logo}
               alt={logoAlt}
               className="brand-logo-img"
-              width="48"
-              height="48"
+              width="46"
+              height="46"
               loading="eager"
             />
           </div>
@@ -117,8 +120,9 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Desktop Actions */}
+        {/* Header Actions: Visible on Both Desktop & Mobile */}
         <div className="navbar-actions">
+          {/* Desktop Phone shortcut */}
           <a
             href={`tel:${primaryPhoneTel}`}
             className="nav-action-tel"
@@ -128,52 +132,69 @@ export default function Navbar() {
             <span className="tel-text">{primaryPhoneDisplay}</span>
           </a>
 
+          {/* Appointment Button: Always visible and clickable on desktop AND mobile */}
           <a
             href="/contact"
-            className="btn btn-primary btn-sm nav-cta"
+            className="btn btn-primary nav-cta"
             onClick={handleBookClick}
+            aria-label="Book an Appointment"
           >
-            <Calendar size={15} aria-hidden="true" />
-            <span>Book an Appointment</span>
+            <Calendar size={14} className="nav-cta-icon" aria-hidden="true" />
+            <span className="nav-cta-text-full">Book an Appointment</span>
+            <span className="nav-cta-text-short">Book</span>
           </a>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Working Hamburger Menu Toggle Button for Mobile */}
           <button
             type="button"
             className="mobile-toggle-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-drawer"
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer Menu */}
       <div
+        id="mobile-nav-drawer"
         className={`mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}
         aria-hidden={!mobileMenuOpen}
       >
         <div className="mobile-drawer-inner">
-          {/* Mobile Logo Showcase */}
-          <div className="mobile-drawer-brand">
-            <div className="mobile-logo-frame">
-              <img
-                src={logo}
-                alt={logoAlt}
-                className="mobile-logo-img"
-                width="64"
-                height="64"
-              />
+          {/* Mobile Drawer Header with Logo & Close Button */}
+          <div className="mobile-drawer-header">
+            <div className="mobile-drawer-brand">
+              <div className="mobile-logo-frame">
+                <img
+                  src={logo}
+                  alt={logoAlt}
+                  className="mobile-logo-img"
+                  width="54"
+                  height="54"
+                />
+              </div>
+              <div className="mobile-brand-meta">
+                <span className="brand-title">Ajanta's</span>
+                <span className="brand-subtitle">{tagline}</span>
+                <span className="mobile-est-tag">Estd. 2007 • Nashik</span>
+              </div>
             </div>
-            <div className="mobile-brand-meta">
-              <span className="brand-title">Ajanta's</span>
-              <span className="brand-subtitle">{tagline}</span>
-              <span className="mobile-est-tag">Estd. 2007 • Nashik</span>
-            </div>
+
+            <button
+              type="button"
+              className="mobile-drawer-close"
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              <X size={20} />
+            </button>
           </div>
 
+          {/* Mobile Navigation Links */}
           <nav className="mobile-nav" aria-label="Mobile Navigation">
             <ul className="mobile-nav-list">
               {navLinks.map((link) => {
@@ -186,8 +207,12 @@ export default function Navbar() {
                       onClick={(e) => handleNavClick(e, link.path)}
                       aria-current={active ? 'page' : undefined}
                     >
-                      <span>{link.label}</span>
-                      {active && <span className="mobile-active-badge">Current</span>}
+                      <span className="mobile-nav-label">{link.label}</span>
+                      {active ? (
+                        <span className="mobile-active-badge">Current</span>
+                      ) : (
+                        <span className="mobile-nav-arrow" aria-hidden="true">→</span>
+                      )}
                     </a>
                   </li>
                 )
@@ -195,10 +220,11 @@ export default function Navbar() {
             </ul>
           </nav>
 
+          {/* Mobile Drawer Action Buttons */}
           <div className="mobile-drawer-footer">
             <a
               href="/contact"
-              className="btn btn-primary btn-full"
+              className="btn btn-primary btn-full mobile-drawer-book-btn"
               onClick={handleBookClick}
             >
               <Calendar size={16} aria-hidden="true" />
@@ -207,15 +233,15 @@ export default function Navbar() {
 
             <a
               href={`tel:${primaryPhoneTel}`}
-              className="btn btn-secondary btn-full"
+              className="btn btn-secondary btn-full mobile-drawer-call-btn"
               onClick={closeMenu}
             >
-              <Phone size={16} aria-hidden="true" />
+              <Phone size={15} aria-hidden="true" />
               <span>Call: {primaryPhoneDisplay}</span>
             </a>
 
             <div className="mobile-location-tag">
-              Sharanpur Road, Nashik
+              Sharanpur Road, Nashik • He & She Salon
             </div>
           </div>
         </div>

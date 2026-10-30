@@ -34,6 +34,13 @@
   gap: 16px;
 }
 
+/* Form Input Sizing for Mobile (16px base prevents iOS auto-zoom) */
+.form-input,
+.form-select,
+.form-textarea {
+  font-size: 16px;
+}
+
 /* Disclaimer Box */
 .appointment-disclaimer {
   display: flex;
@@ -138,11 +145,15 @@
 
 .quick-phone-actions .btn {
   justify-content: flex-start;
-  padding: 10px 16px;
+  padding: 11px 16px;
+  font-size: 0.88rem;
+  width: 100%;
 }
 
 .insta-link-btn {
   display: inline-flex;
+  width: 100%;
+  justify-content: center;
 }
 
 /* Tips Card */
@@ -193,6 +204,7 @@
 @media (max-width: 960px) {
   .appointment-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
@@ -204,5 +216,49 @@
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .btn-submit {
+    padding: 13px 18px;
+    font-size: 0.94rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-form-card {
+    padding: 20px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .contact-quick-card {
+    padding: 20px 16px;
+  }
+
+  .contact-tips-card {
+    padding: 18px 16px;
+  }
+
+  .appointment-disclaimer {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .appointment-disclaimer p {
+    font-size: 0.8rem;
+  }
+
+  .btn-submit {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .appointment-form-card {
+    padding: 18px 12px;
+  }
+
+  .contact-quick-card h3 {
+    font-size: 1.15rem;
   }
 }
