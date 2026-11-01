@@ -26,7 +26,7 @@ export const salonData = {
     heroHeadline: "A little time for yourself.",
     heroSubheadline: "Thoughtful hair and beauty care to help you look and feel your best. Serving men and women in Nashik with genuine care since 2007.",
     productsClaim: "We prioritise authentic, quality salon products for every hair and skin service.", // Phrased conservatively & editable
-    logo: "/logo.jpg",
+    logo: "/ajantas-salon-logo.png",
     logoAlt: "Official Logo of Ajanta's Salon for He & She",
   },
 
