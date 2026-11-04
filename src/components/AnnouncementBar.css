@@ -1,10 +1,10 @@
 .announcement-bar {
-  background-color: var(--color-wine-dark);
-  color: var(--text-inverted);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   font-size: 0.78rem;
   letter-spacing: 0.02em;
   padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-light);
   position: relative;
   z-index: 101;
 }
@@ -26,31 +26,32 @@
 }
 
 .announcement-icon {
-  color: var(--color-champagne);
+  color: var(--color-wine);
   flex-shrink: 0;
 }
 
 .announcement-text {
   font-weight: 500;
-  color: rgba(250, 247, 242, 0.95);
+  color: var(--text-secondary);
 }
 
 .announcement-phone-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--color-champagne-light);
+  color: var(--color-wine);
   font-weight: 600;
   white-space: nowrap;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: var(--radius-sm);
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
   transition: all 0.2s ease;
 }
 
 .announcement-phone-link:hover {
-  background-color: rgba(255, 255, 255, 0.16);
-  color: #FFFFFF;
+  background-color: var(--color-rose-light);
+  color: var(--color-wine-dark);
 }
 
 @media (max-width: 768px) {

@@ -15,8 +15,8 @@ export default function HomePage() {
 
   useScrollReveal()
 
-  // Select 4 core services for the compact homepage preview
-  const featuredServices = services.slice(0, 4)
+  // Select all 6 core services so Nails & Spa are explicitly highlighted on Home too
+  const featuredServices = services.slice(0, 6)
 
   return (
     <div className="home-page-root page-transition">

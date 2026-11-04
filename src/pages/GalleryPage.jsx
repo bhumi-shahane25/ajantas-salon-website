@@ -4,6 +4,7 @@ import { salonData } from '../data/salonData'
 import { useNavigation } from '../context/NavigationContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import Gallery from '../components/Gallery'
+import HairColourShowcase from '../components/HairColourShowcase'
 
 export default function GalleryPage() {
   const { navigate } = useNavigation()
@@ -22,13 +23,16 @@ export default function GalleryPage() {
           </span>
           <h1 className="page-hero-title">Inspiration Gallery</h1>
           <p className="page-hero-subtitle">
-            A curated showcase of haircut textures, dimensional colour, bridal makeup artistry, and nail enhancements that inspire our salon craft.
+            A curated showcase of real client haircuts, dimensional colour transformations, bridal makeup artistry, and nail enhancements at Ajanta's Salon.
           </p>
         </div>
       </section>
 
       {/* Main Filterable Gallery with Lightbox */}
       <Gallery />
+
+      {/* Hair Colour Videos & Stills Showcase */}
+      <HairColourShowcase />
 
       {/* Instagram Spotlight & Booking Callout */}
       <section className="section" style={{ paddingTop: '40px', paddingBottom: '64px', backgroundColor: 'var(--bg-secondary)' }}>

@@ -1,45 +1,52 @@
 /* =============================================================================
    AJANTA'S SALON FOR HE & SHE — DESIGN SYSTEM & CORE STYLES
-   Editorial, warm, human, and authentic modern Indian salon visual identity.
+   Soft, elegant, feminine pastel palette: blush pink, pastel peach, ivory,
+   cream and subtle sage tones with clean modern typography.
    ============================================================================= */
 
 :root {
-  /* Color Palette */
-  --bg-primary: #FAF7F2;          /* Warm Ivory */
-  --bg-secondary: #F3ECE6;        /* Soft Linen / Cream */
-  --bg-card: #FFFFFF;             /* Pure Card Background */
-  --bg-card-hover: #FCFAF8;       /* Subtle Card Hover */
-  --bg-accent-subtle: #F7EFF1;    /* Pale Dusty Rose Wash */
-  --bg-dark: #1E1217;             /* Deepest Charcoal Wine */
-  --bg-dark-card: #281B21;        /* Slightly lighter dark container */
+  /* Soft Pastel Color Palette */
+  --bg-primary: #FAF6F3;          /* Soft Warm Ivory */
+  --bg-secondary: #F4ECE8;        /* Gentle Linen & Blush Tint */
+  --bg-card: #FFFFFF;             /* Crisp Pure Card Background */
+  --bg-card-hover: #FCF9F7;       /* Delicate Card Hover */
+  --bg-accent-subtle: #F6EEEA;    /* Soft Pastel Peach & Rose Wash */
+  --bg-sage-subtle: #EEF3EE;      /* Gentle Sage Mist Wash */
+  --bg-dark: #2D2427;             /* Soft Muted Cocoa Charcoal (Gentle, never harsh) */
+  --bg-dark-card: #382E32;        /* Subtle warm cocoa container */
 
-  --color-wine: #6A1E36;          /* Deep Burgundy / Primary Accent */
-  --color-wine-dark: #4F1426;     /* Deep Wine for hovers */
-  --color-wine-light: #8E2B4B;    /* Lighter Burgundy */
-  --color-rose: #C78A98;          /* Soft Dusty Rose */
-  --color-rose-light: #F4E7EB;    /* Light Rose Tint */
-  --color-rose-badge: #ECE1E4;    /* Pill Tag Rose */
+  /* Pastel Accent Colors */
+  --color-wine: #9E5868;          /* Soft Dusty Rose Mauve (Elegant feminine primary) */
+  --color-wine-dark: #824453;     /* Muted Plum Mauve for hover */
+  --color-wine-light: #B87282;    /* Light Dusty Rose */
+  --color-rose: #D9A0AC;          /* Soft Blush Pink */
+  --color-rose-light: #FBEFF2;    /* Delicate Pastel Blush Tint */
+  --color-rose-badge: #F4E2E7;    /* Soft Pill Tag Blush */
   
-  --color-champagne: #C29B53;     /* Understated Warm Champagne Gold */
-  --color-champagne-light: #EFE4CD;
-  --color-champagne-dark: #9E7B35;
-  --color-gold-border: rgba(194, 155, 83, 0.35);
+  --color-peach: #E8B4A2;         /* Soft Pastel Peach */
+  --color-peach-light: #FAECE6;   /* Pale Peach Wash */
+  --color-sage: #8A9E8C;          /* Soft Botanical Sage Tone */
+  --color-sage-light: #E4ECE5;    /* Pale Sage Wash */
+  --color-champagne: #D4A89A;     /* Muted Warm Rose Gold / Soft Terracotta */
+  --color-champagne-light: #F7EAE5;
+  --color-champagne-dark: #A86F60;
+  --color-gold-border: rgba(184, 114, 130, 0.25);
 
-  --text-primary: #231F20;        /* Dark Charcoal Primary Text */
-  --text-secondary: #585054;      /* Readable Muted Body Text */
-  --text-muted: #7E7579;          /* Tertiary / Meta Text */
-  --text-inverted: #FAF7F2;       /* Text on Wine / Dark backgrounds */
-  --text-inverted-muted: #D6CBCF; /* Subdued text on Dark backgrounds */
+  --text-primary: #2C2427;        /* Soft Charcoal Plum Text */
+  --text-secondary: #63565A;      /* Warm Readable Body Text */
+  --text-muted: #8E8085;          /* Muted Tertiary & Meta Text */
+  --text-inverted: #FAF6F3;       /* Ivory Text on Dark */
+  --text-inverted-muted: #D8CCCB; /* Subdued text on Dark */
 
-  --border-light: #EAE2DB;        /* Crisp subtle divider */
-  --border-medium: #DDD2C8;       /* Noticeable divider */
-  --border-wine: rgba(106, 30, 54, 0.18);
+  --border-light: #EFE4DF;        /* Soft warm border divider */
+  --border-medium: #E3D5CE;       /* Defined soft border divider */
+  --border-wine: rgba(158, 88, 104, 0.22);
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(35, 31, 32, 0.04);
-  --shadow-md: 0 8px 24px rgba(35, 31, 32, 0.07);
-  --shadow-lg: 0 16px 40px rgba(35, 31, 32, 0.11);
-  --shadow-wine: 0 10px 28px rgba(106, 30, 54, 0.18);
+  /* Shadows (Subtle, soft, never heavy) */
+  --shadow-sm: 0 2px 10px rgba(70, 50, 56, 0.04);
+  --shadow-md: 0 8px 24px rgba(70, 50, 56, 0.06);
+  --shadow-lg: 0 16px 36px rgba(70, 50, 56, 0.09);
+  --shadow-wine: 0 10px 24px rgba(158, 88, 104, 0.16);
 
   /* Typography */
   --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
@@ -47,9 +54,9 @@
 
   /* Spacing & Sizing */
   --container-max: 1200px;
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-full: 9999px;
 
   /* Header Height Reference */
@@ -160,14 +167,14 @@ p {
 
 /* Section Wrapper Utility */
 .section {
-  padding-top: 84px;
-  padding-bottom: 84px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 52px;
+    padding-bottom: 52px;
   }
 }
 
@@ -184,7 +191,7 @@ p {
 .section-header {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto 52px auto;
+  margin: 0 auto 48px auto;
 }
 
 .section-header.text-left {
@@ -195,7 +202,7 @@ p {
 .eyebrow {
   display: inline-block;
   font-size: 0.76rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--color-wine);
@@ -203,11 +210,11 @@ p {
 }
 
 .section-dark .eyebrow {
-  color: var(--color-champagne);
+  color: var(--color-peach);
 }
 
 .section-title {
-  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
   color: var(--text-primary);
   margin-bottom: 14px;
 }
@@ -226,14 +233,14 @@ p {
   color: var(--text-inverted-muted);
 }
 
-/* Standard Buttons & CTAs */
+/* Standard Pastel Buttons & CTAs */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 26px;
-  font-size: 0.94rem;
+  padding: 12px 24px;
+  font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   border-radius: var(--radius-sm);
@@ -246,6 +253,7 @@ p {
   background-color: var(--color-wine);
   color: #FFFFFF;
   box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn-primary:hover {
@@ -261,49 +269,50 @@ p {
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-wine);
-  color: #FFFFFF;
+  background-color: var(--color-rose-light);
+  color: var(--color-wine-dark);
   transform: translateY(-1px);
 }
 
 .btn-champagne {
-  background-color: var(--color-champagne);
-  color: #1E1217;
-  font-weight: 700;
+  background-color: var(--color-peach);
+  color: #2D2427;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn-champagne:hover {
-  background-color: #D4AF37;
+  background-color: #E0A693;
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(194, 155, 83, 0.3);
+  box-shadow: 0 4px 14px rgba(232, 180, 162, 0.4);
 }
 
 .btn-outline-light {
   background-color: transparent;
   color: var(--text-inverted);
-  border: 1.5px solid rgba(250, 247, 242, 0.4);
+  border: 1.5px solid rgba(250, 246, 243, 0.45);
 }
 
 .btn-outline-light:hover {
-  background-color: rgba(250, 247, 242, 0.1);
+  background-color: rgba(250, 246, 243, 0.12);
   border-color: var(--text-inverted);
 }
 
 .btn-whatsapp {
-  background-color: #25D366;
+  background-color: #38A169;
   color: #FFFFFF;
   font-weight: 600;
 }
 
 .btn-whatsapp:hover {
-  background-color: #20BD5A;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  background-color: #2F855A;
+  box-shadow: 0 4px 14px rgba(56, 161, 105, 0.35);
   transform: translateY(-1px);
 }
 
 .btn-sm {
-  padding: 9px 18px;
-  font-size: 0.86rem;
+  padding: 8px 16px;
+  font-size: 0.85rem;
 }
 
 /* Badge / Pill */
@@ -319,6 +328,7 @@ p {
   border-radius: var(--radius-full);
   background-color: var(--color-rose-badge);
   color: var(--color-wine);
+  border: 1px solid var(--border-light);
 }
 
 /* Accessibility Focus States */
@@ -361,7 +371,7 @@ textarea:focus-visible {
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--color-wine);
-  box-shadow: 0 0 0 3px rgba(106, 30, 54, 0.1);
+  box-shadow: 0 0 0 3px rgba(158, 88, 104, 0.12);
   outline: none;
 }
 
@@ -428,8 +438,8 @@ textarea:focus-visible {
 /* Scroll Reveal Classes */
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -439,21 +449,21 @@ textarea:focus-visible {
 }
 
 .reveal-delay-1 {
-  transition-delay: 0.1s;
+  transition-delay: 0.08s;
 }
 
 .reveal-delay-2 {
-  transition-delay: 0.2s;
+  transition-delay: 0.16s;
 }
 
 .reveal-delay-3 {
-  transition-delay: 0.3s;
+  transition-delay: 0.24s;
 }
 
 /* Subpage Editorial Header Banner */
 .page-hero-banner {
   background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  padding: 48px 0 42px 0;
+  padding: 44px 0 38px 0;
   border-bottom: 1px solid var(--border-light);
   text-align: center;
 }
@@ -463,7 +473,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 8px;
   font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--color-wine);
@@ -488,7 +498,7 @@ textarea:focus-visible {
 
 @media (max-width: 768px) {
   .page-hero-banner {
-    padding: 36px 0 30px 0;
+    padding: 34px 0 28px 0;
   }
 
   .page-hero-title {

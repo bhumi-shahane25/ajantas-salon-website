@@ -25,7 +25,7 @@ export const salonData = {
     heroEyebrow: "AJANTA'S SALON FOR HE & SHE",
     heroHeadline: "A little time for yourself.",
     heroSubheadline: "Thoughtful hair and beauty care to help you look and feel your best. Serving men and women in Nashik with genuine care since 2007.",
-    productsClaim: "We prioritise authentic, quality salon products for every hair and skin service.", // Phrased conservatively & editable
+    productsClaim: "We prioritise authentic, quality salon products for every hair and skin service.",
     logo: "/ajantas-salon-logo.png",
     logoAlt: "Official Logo of Ajanta's Salon for He & She",
   },
@@ -54,14 +54,12 @@ export const salonData = {
       "Behind Kulkarni Garden",
       "Sharanpur Road / Rajiv Gandhi Bhavan Area"
     ],
-    // Google Maps search query URL directly pointing to the exact address & landmarks
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Ajantas+Salon+Near+SBI+ATM+Shraddha+Hospital+Behind+Kulkarni+Garden+Sharanpur+Road+Nashik+422005",
-    // Embed map URL for iframe (interactive map preview of the Nashik Sharanpur Road vicinity)
     googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14997.518883584742!2d73.7661555!3d20.0028292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddebb6e42be81b%3A0xc3c5452f1e67049e!2sSharanpur%20Rd%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     scheduleNote: "Salon visits are accommodated throughout the week. Please call or WhatsApp ahead to check immediate slot availability.",
   },
 
-  // Trust / Credibility Highlights (Honest, verified facts only)
+  // Trust / Credibility Highlights
   trustHighlights: [
     {
       title: "Established 2007",
@@ -81,7 +79,7 @@ export const salonData = {
     }
   ],
 
-  // About Section Content
+  // About Section Content (Original photography preserved)
   about: {
     tag: "ABOUT THE SALON",
     heading: "A warm, personal approach to hair and beauty in Nashik.",
@@ -90,7 +88,6 @@ export const salonData = {
       "Whether you are dropping in for a clean classic haircut, a restorative hair spa after a demanding week, vibrant hair colour, or preparing for an auspicious wedding celebration, our team focuses on what suits your individuality best.",
       "Alongside our salon services, we also run beauty, makeup, and hair academy courses, sharing practical salon techniques with aspiring artists right here in Nashik."
     ],
-    // High-resolution temporary royalty-free photography (easily replaceable with salon photos)
     images: {
       primary: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80",
       primaryAlt: "Professional hair and beauty studio interior with warm ambient lighting",
@@ -99,7 +96,7 @@ export const salonData = {
     }
   },
 
-  // Services Categories (All authentic services from business profile)
+  // Services Categories (All six original categories preserved with original images + client hair colour)
   services: [
     {
       id: "haircuts-styling",
@@ -129,8 +126,8 @@ export const salonData = {
         "Global hair colour & root touch-up",
         "Highlights, balayage & fashion streaks"
       ],
-      image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80",
-      imageAlt: "Rich glossy hair colour and nourishing treatment",
+      image: "/images/hair-colour/IMG_6795.jpg",
+      imageAlt: "Client's rich dimensional hair colour transformation at Ajanta's Salon",
       enquiryMessage: "Hello Ajanta's Salon, I would like to enquire about hair colour, spa, or smoothing treatments."
     },
     {
@@ -161,8 +158,8 @@ export const salonData = {
         "Photoshoot & portfolio makeup",
         "Saree draping & dupatta setting"
       ],
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
-      imageAlt: "Artful bridal makeup and traditional jewelry",
+      image: "/images/salon/IMG_5025.jpg",
+      imageAlt: "Traditional bridal artistry and graceful makeup by Ajanta's Salon",
       enquiryMessage: "Hello Ajanta's Salon, I would like to enquire about bridal or occasion makeup availability."
     },
     {
@@ -199,7 +196,7 @@ export const salonData = {
     }
   ],
 
-  // Signature Showcase Section
+  // Signature Showcase Section (Client bridal styling retained)
   signature: {
     tag: "SIGNATURE SHOWCASE",
     title: "Bridal Styling & Special Occasions",
@@ -211,12 +208,12 @@ export const salonData = {
       "Long-wear makeup suited for Nashik weather & lighting",
       "Comfort-focused saree & dupatta draping"
     ],
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80",
-    imageAlt: "Timeless portrait with elegant makeup and jewellery",
+    image: "/images/salon/IMG_5026_salon.jpg",
+    imageAlt: "Traditional wedding styling by Ajanta's Salon Nashik",
     enquiryMessage: "Hello Ajanta's Salon, I would like to enquire about bridal and occasion styling packages."
   },
 
-  // Beauty Academy Section (From public business profile)
+  // Beauty Academy Section
   academy: {
     tag: "LEARN WITH US",
     title: "Ajanta's Beauty Academy",
@@ -245,23 +242,23 @@ export const salonData = {
     enquiryMessage: "Hello Ajanta's Academy, I am interested in knowing more about your upcoming beauty, makeup, and hair courses."
   },
 
-  // Curated Gallery (High quality salon & beauty editorial photos)
+  // Curated Gallery: Original photographs restored, preserving client hair-colour and bridal additions
   gallery: [
     {
       id: "gal-1",
       title: "Bridal Elegance",
       category: "Bridal & Occasion",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
-      alt: "Radiant occasion makeup and subtle eye styling",
+      image: "/images/salon/IMG_5025.jpg",
+      alt: "Traditional bridal styling by Ajanta's Salon",
       aspect: "portrait"
     },
     {
       id: "gal-2",
       title: "Dimensional Hair Colour",
       category: "Hair & Styling",
-      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
-      alt: "Warm highlights and polished salon blow-dry",
-      aspect: "landscape"
+      image: "/images/hair-colour/IMG_6796.jpg",
+      alt: "Client's dimensional hair colour transformation at Ajanta's Salon",
+      aspect: "portrait"
     },
     {
       id: "gal-3",
@@ -283,7 +280,7 @@ export const salonData = {
       id: "gal-5",
       title: "Skin Glow & Rejuvenation",
       category: "Skin Care",
-      image: "https://images.unsplash.com/photo-1512290900672-1f02e604f32a?auto=format&fit=crop&w=900&q=80",
+      image: "/images/salon/IMG_5026_salon.jpg",
       alt: "Nourishing facial care and relaxed hydration",
       aspect: "landscape"
     },
@@ -291,16 +288,16 @@ export const salonData = {
       id: "gal-6",
       title: "Occasion Hairdo & Curls",
       category: "Hair & Styling",
-      image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=80",
-      alt: "Soft romantic curls for party and engagement events",
+      image: "/images/hair-colour/IMG_6797.jpg",
+      alt: "Client's finished hair colour transformation",
       aspect: "portrait"
     },
     {
       id: "gal-7",
       title: "Luminous Wedding Look",
       category: "Bridal & Occasion",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
-      alt: "Subtle traditional wedding makeup and elegant accessories",
+      image: "/images/salon/IMG_5026_salon.jpg",
+      alt: "Traditional wedding styling by Ajanta's Salon",
       aspect: "portrait"
     },
     {
@@ -338,3 +335,4 @@ export const salonData = {
     disclaimer: "Please note: Submitting this form sends an appointment enquiry via WhatsApp to +91 98603 47226. Your booking is confirmed only after the salon verifies slot availability and connects back with you."
   }
 }
+

@@ -1,8 +1,9 @@
-import { Sparkles, Calendar } from 'lucide-react'
+import { ArrowRight, Calendar, Sparkles } from 'lucide-react'
 import { salonData } from '../data/salonData'
 import { useNavigation } from '../context/NavigationContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import Services from '../components/Services'
+import HairColourShowcase from '../components/HairColourShowcase'
 import Academy from '../components/Academy'
 
 export default function ServicesPage() {
@@ -26,6 +27,9 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
+
+      {/* Dedicated Hair Colour & Transformation Showcase (Videos & Stills) */}
+      <HairColourShowcase />
 
       {/* Full Services Catalogue with Itemized Inclusions & Direct Enquiries */}
       <Services />

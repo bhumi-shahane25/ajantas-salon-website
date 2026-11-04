@@ -11,7 +11,8 @@ export default function ImageWithFallback({
   className = '',
   aspectRatio = '4/3',
   priority = false,
-  sizes = '(max-width: 768px) 100vw, 50vw'
+  sizes = '(max-width: 768px) 100vw, 50vw',
+  objectPosition = 'center center'
 }) {
   const [hasError, setHasError] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -30,7 +31,7 @@ export default function ImageWithFallback({
           sizes={sizes}
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
-          style={{ opacity: isLoaded ? 1 : 0 }}
+          style={{ opacity: isLoaded ? 1 : 0, objectPosition }}
         />
       ) : (
         <div className="image-fallback">

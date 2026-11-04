@@ -67,8 +67,8 @@
   height: 72px;
   border-radius: var(--radius-sm);
   background-color: #000000;
-  border: 1.5px solid var(--color-champagne);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border: 1.5px solid var(--border-medium);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +101,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-champagne);
+  color: var(--color-peach);
   font-weight: 600;
   margin-top: 3px;
   display: block;
@@ -164,7 +164,7 @@
   font-family: var(--font-serif);
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--color-champagne-light);
+  color: var(--color-peach-light);
   margin-bottom: 20px;
   letter-spacing: 0.02em;
 }
@@ -205,7 +205,7 @@
 }
 
 .footer-contact-icon {
-  color: var(--color-champagne);
+  color: var(--color-peach);
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -247,7 +247,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--color-champagne-light);
+  color: var(--color-peach-light);
   font-size: 0.82rem;
   font-weight: 500;
   transition: color 0.2s;

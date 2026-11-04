@@ -1,0 +1,267 @@
+/* =============================================================================
+   HAIR COLOUR SHOWCASE COMPONENT — ELEGANT PASTEL EDITORIAL STYLING
+   ============================================================================= */
+
+.hair-colour-showcase-section {
+  padding: 68px 0;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hair-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.hair-video-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.hair-video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-medium);
+}
+
+.hair-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/12;
+  background-color: #2D2427;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hair-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Play overlay */
+.video-play-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(30, 24, 27, 0.2) 0%, rgba(30, 24, 27, 0.55) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #FFFFFF;
+  transition: background-color 0.2s ease;
+}
+
+.hair-video-wrapper:hover .video-play-overlay {
+  background: linear-gradient(180deg, rgba(30, 24, 27, 0.15) 0%, rgba(30, 24, 27, 0.45) 100%);
+}
+
+.video-play-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--color-wine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, background-color 0.2s ease;
+  padding-left: 4px;
+}
+
+.hair-video-wrapper:hover .video-play-btn {
+  transform: scale(1.08);
+  background-color: #FFFFFF;
+}
+
+.video-play-hint {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Control bar */
+.video-control-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, transparent 0%, rgba(20, 16, 18, 0.8) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #FFFFFF;
+  z-index: 3;
+}
+
+.video-ctrl-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.video-ctrl-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+.video-status-text {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hair-video-info {
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hair-video-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-wine);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.hair-video-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.hair-video-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Real client stills */
+.hair-stills-section {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  border: 1px solid var(--border-light);
+}
+
+.hair-stills-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.hair-stills-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.hair-stills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.hair-still-card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hair-still-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.hair-still-caption {
+  padding: 10px 14px;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* Responsive queries */
+@media (max-width: 860px) {
+  .hair-videos-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hair-stills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hair-stills-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .hair-stills-header .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hair-colour-showcase-section {
+    padding: 44px 0;
+  }
+
+  .hair-stills-section {
+    padding: 20px 16px;
+  }
+
+  .hair-stills-title {
+    font-size: 1.18rem;
+  }
+
+  .hair-video-title {
+    font-size: 1.1rem;
+  }
+}
