@@ -95,8 +95,10 @@ export default function HomePage() {
               >
                 <div className="featured-service-img-wrap">
                   <ImageWithFallback
-                    src={service.image}
+                    src={service.image} 
                     alt={service.imageAlt}
+                    style={{
+objectPosition: service.id === "makeup-bridal" ? "center top" : "center"}}
                     aspectRatio="16/11"
                   />
                 </div>
