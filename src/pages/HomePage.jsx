@@ -98,7 +98,8 @@ export default function HomePage() {
                     src={service.image} 
                     alt={service.imageAlt}
                     style={{
-objectPosition: service.id === "makeup-bridal" ? "center top" : "center"}}
+                     objectPosition={
+                    service.id === "makeup-bridal" ? "center top" : "center"}}
                     aspectRatio="16/11"
                   />
                 </div>
