@@ -69,6 +69,11 @@
   z-index: 2;
 }
 
+.about-image-secondary img {
+  object-fit: cover;
+  object-position: center 30% !important;
+}
+
 /* Text Content */
 .about-text-content {
   display: flex;

@@ -50,7 +50,14 @@ export default function Services() {
                     alt={service.imageAlt}
                     aspectRatio={isWide ? '16/10' : '4/3'}
                     className="service-img"
-                    objectPosition={service.id === 'makeup-bridal' ? 'top center' : 'center center'}
+                    objectPosition={
+                      service.objectPosition ||
+                      (service.id === 'makeup-bridal'
+                        ? 'top center'
+                        : service.id === 'hair-treatments-colour'
+                        ? 'center 20%'
+                        : 'center center')
+                    }
                   />
                   <span className="service-category-badge">{service.tag}</span>
                 </div>

@@ -35,7 +35,7 @@ export default function About() {
               alt={images.secondaryAlt}
               aspectRatio="1/1"
               className="about-image-secondary"
-              objectPosition="center top"
+              objectPosition="center 30%"
             />
           </div>
         </div>
