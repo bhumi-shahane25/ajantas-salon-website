@@ -181,7 +181,7 @@
   justify-content: space-between;
   gap: 36px;
   box-shadow: var(--shadow-wine);
-  border: 1px solid rgba(194, 155, 83, 0.35);
+  border: 1px solid rgba(223, 187, 165, 0.35);
   position: relative;
   overflow: hidden;
 }
@@ -194,7 +194,7 @@
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(194, 155, 83, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(223, 187, 165, 0.25) 0%, transparent 70%);
   pointer-events: none;
 }
 

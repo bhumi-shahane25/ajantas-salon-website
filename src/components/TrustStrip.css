@@ -41,7 +41,7 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background-color: rgba(106, 30, 54, 0.08);
+  background-color: var(--color-rose-badge);
   color: var(--color-wine);
   flex-shrink: 0;
 }

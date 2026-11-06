@@ -11,7 +11,7 @@
 .navbar-header.scrolled {
   background-color: rgba(250, 247, 242, 0.98);
   box-shadow: 0 4px 20px rgba(35, 31, 32, 0.08);
-  border-bottom-color: rgba(106, 30, 54, 0.12);
+  border-bottom-color: var(--border-medium);
 }
 
 .navbar-container {
@@ -56,7 +56,7 @@
 
 .navbar-brand:hover .brand-logo-frame {
   border-color: var(--color-wine);
-  box-shadow: 0 3px 12px rgba(158, 88, 104, 0.25);
+  box-shadow: 0 3px 12px rgba(183, 110, 121, 0.25);
   transform: scale(1.04);
 }
 
@@ -197,7 +197,7 @@
   background-color: var(--color-wine);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 14px rgba(158, 88, 104, 0.2);
+  box-shadow: 0 4px 14px rgba(183, 110, 121, 0.2);
   border-radius: var(--radius-sm);
   transition: all 0.25s ease;
   white-space: nowrap;
@@ -206,7 +206,7 @@
 
 .nav-cta:hover {
   background-color: var(--color-wine-dark);
-  box-shadow: 0 6px 18px rgba(158, 88, 104, 0.3);
+  box-shadow: 0 6px 18px rgba(183, 110, 121, 0.3);
   transform: translateY(-1px);
 }
 
@@ -386,7 +386,7 @@
 }
 
 .mobile-nav-link.active {
-  background-color: rgba(106, 30, 54, 0.08);
+  background-color: var(--color-rose-badge);
   color: var(--color-wine);
   font-weight: 700;
   border-left: 3.5px solid var(--color-wine);

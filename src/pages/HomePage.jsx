@@ -51,7 +51,7 @@ export default function HomePage() {
 
           <div className="home-intro-card reveal reveal-delay-1">
             <span className="eyebrow">HONEST VALUES</span>
-            <h3 className="home-intro-card-title">Serving He & She Since {establishmentYear}</h3>
+            <h3 className="home-intro-card-title">Serving Nashik Since {establishmentYear}</h3>
             <p className="home-intro-card-desc">
               {productsClaim} Whether you need a precision haircut, a rejuvenating facial, or comprehensive bridal styling, our team focuses on what suits your individuality best.
             </p>

@@ -1,5 +1,12 @@
 .gallery-section {
   background-color: var(--bg-primary);
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+/* Section Intro Header spacing */
+.gallery-section .section-header {
+  margin-bottom: 28px;
 }
 
 /* Filter Bar */
@@ -9,7 +16,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .gallery-filter-btn {
@@ -149,7 +156,7 @@
 .lightbox-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(18, 10, 14, 0.94);
+  background-color: rgba(28, 22, 20, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
@@ -294,7 +301,31 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-item {
+    border-radius: var(--radius-sm);
+  }
+
+  .gallery-overlay {
+    padding: 12px;
+  }
+
+  .gallery-overlay-title {
+    font-size: 0.95rem;
+  }
+
+  .gallery-filter-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
   .gallery-grid {
     grid-template-columns: 1fr;
   }

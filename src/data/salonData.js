@@ -21,7 +21,7 @@ export const salonData = {
     experienceYears: new Date().getFullYear() - 2007,
     salonType: "Unisex Hair, Beauty, Nail Studio & Academy",
     badgeText: "ESTD. 2007 • SHARANPUR ROAD, NASHIK",
-    announcement: "Welcoming He & She • Professional Unisex Hair, Beauty & Academy in Nashik • Appointments & Inquiries: +91 98603 47226",
+    announcement: "Professional Unisex Hair, Beauty & Academy in Nashik • Appointments & Inquiries: +91 98603 47226",
     heroEyebrow: "AJANTA'S SALON FOR HE & SHE",
     heroHeadline: "A little time for yourself.",
     heroSubheadline: "Thoughtful hair and beauty care to help you look and feel your best. Serving men and women in Nashik with genuine care since 2007.",
@@ -89,14 +89,14 @@ export const salonData = {
       "Alongside our salon services, we also run beauty, makeup, and hair academy courses, sharing practical salon techniques with aspiring artists right here in Nashik."
     ],
     images: {
-      primary: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80",
-      primaryAlt: "Professional hair and beauty studio interior with warm ambient lighting",
-      secondary: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
-      secondaryAlt: "Delicate hair styling and beauty care in progress"
+      primary: "/images/salon/IMG_8811_upright.jpg",
+      primaryAlt: "Client hair styling and dimensional colour seen from the back at Ajanta's Salon Nashik",
+      secondary: "/images/salon/IMG_8780_upright.jpg",
+      secondaryAlt: "Client hair styling and luminous blowout at Ajanta's Salon"
     }
   },
 
-  // Services Categories (All six original categories preserved with original images + client hair colour)
+  // Services Categories (All six original categories preserved with verified authentic & local images)
   services: [
     {
       id: "haircuts-styling",
@@ -110,7 +110,7 @@ export const salonData = {
         "Blow-dry styling & thermal setting",
         "Hair wash & professional conditioning"
       ],
-      image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80",
+      image: "/images/salon/haircut-styling.jpg",
       imageAlt: "Stylist performing precision haircut in salon",
       enquiryMessage: "Hello Ajanta's Salon, I would like to enquire about haircut and styling services."
     },
@@ -142,8 +142,8 @@ export const salonData = {
         "Full body waxing & gentle peel waxing",
         "Tan removal & skin polish"
       ],
-      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
-      imageAlt: "Relaxing facial and skincare treatment",
+      image: "/images/salon/skin-facial-care.jpg",
+      imageAlt: "Professional facial treatment and relaxing skincare care at Ajanta's Salon",
       enquiryMessage: "Hello Ajanta's Salon, I would like to enquire about facial and skincare services."
     },
     {
@@ -174,8 +174,8 @@ export const salonData = {
         "Nail shaping, buffing & gel polish",
         "Extension removal & nail repair"
       ],
-      image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80",
-      imageAlt: "Refined gel nail art and manicured nails",
+      image: "/images/salon/nail-extensions.jpg",
+      imageAlt: "Artisan gel nail extensions and delicate French tip manicure",
       enquiryMessage: "Hello Ajanta's Salon, I would like to enquire about nail extensions and nail art services."
     },
     {
@@ -190,8 +190,8 @@ export const salonData = {
         "Relaxing head, neck & shoulder massage",
         "Body spa and de-stress therapies"
       ],
-      image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=800&q=80",
-      imageAlt: "Nourishing spa manicure and relaxation therapy",
+      image: "/images/salon/spa-manicure.jpg",
+      imageAlt: "Nourishing spa manicure, pedicure and relaxation therapy",
       enquiryMessage: "Hello Ajanta's Salon, I would like to enquire about manicure, pedicure, or spa services."
     }
   ],
@@ -242,71 +242,205 @@ export const salonData = {
     enquiryMessage: "Hello Ajanta's Academy, I am interested in knowing more about your upcoming beauty, makeup, and hair courses."
   },
 
-  // Curated Gallery: Original photographs restored, preserving client hair-colour and bridal additions
+  // Curated Gallery: Authentic salon work across all categories, including Men's Grooming, Hair & Colour, Bridal, Skin, and Nails
   gallery: [
+    // 1. Men's Grooming (Real client work at Ajanta's Salon)
     {
-      id: "gal-1",
-      title: "Bridal Elegance",
-      category: "Bridal & Occasion",
-      image: "/images/salon/IMG_5025.jpg",
-      alt: "Traditional bridal styling by Ajanta's Salon",
-      aspect: "portrait"
+      id: "gal-men-1",
+      title: "Precision Fade & Textured Top",
+      category: "Men's Grooming",
+      image: "/images/gallery/IMG_3108.JPG.jpeg",
+      alt: "Men's precision fade haircut and styled pomp at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
     },
     {
-      id: "gal-2",
-      title: "Dimensional Hair Colour",
+      id: "gal-men-2",
+      title: "Classic Taper & Modern Side Part",
+      category: "Men's Grooming",
+      image: "/images/gallery/IMG_3128.JPG.jpeg",
+      alt: "Men's classic taper and clean side-part styling at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-men-3",
+      title: "Contoured High-Fade & Grooming",
+      category: "Men's Grooming",
+      image: "/images/gallery/IMG_3143.JPG.jpeg",
+      alt: "Men's contoured fade haircut and beard grooming at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-men-4",
+      title: "Executive Styling & Subtle Highlights",
+      category: "Men's Grooming",
+      image: "/images/gallery/IMG_3146.JPG.jpeg",
+      alt: "Men's executive scissor haircut with textured finish at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-men-5",
+      title: "Precision Neckline & Hair Sculpting",
+      category: "Men's Grooming",
+      image: "/images/gallery/IMG_3162.JPG.jpeg",
+      alt: "Back profile of precision neckline taper and scissor sculpting",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+
+    // 2. Hair & Styling (Real client work at Ajanta's Salon)
+    {
+      id: "gal-hair-1",
+      title: "Voluminous Layers & Blowout",
+      category: "Hair & Styling",
+      image: "/images/salon/IMG_8780_upright.jpg",
+      alt: "Client's voluminous layered haircut and blowout styling at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-hair-2",
+      title: "Warm Honey Balayage Waves",
+      category: "Hair & Styling",
+      image: "/images/salon/IMG_8811_upright.jpg",
+      alt: "Client's long styled waves with warm honey balayage seen from back",
+      aspect: "portrait",
+      objectPosition: "center top"
+    },
+    {
+      id: "gal-hair-3",
+      title: "Rich Brunette Waves & Shine",
+      category: "Hair & Styling",
+      image: "/images/salon/IMG_8795_upright.jpg",
+      alt: "Textured brunette blowout and gloss therapy at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-hair-4",
+      title: "Dimensional Copper Balayage",
+      category: "Hair & Styling",
+      image: "/images/hair-colour/IMG_6795.jpg",
+      alt: "Client's dimensional hair colour transformation at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-hair-5",
+      title: "Auburn Reflections & Gloss",
       category: "Hair & Styling",
       image: "/images/hair-colour/IMG_6796.jpg",
-      alt: "Client's dimensional hair colour transformation at Ajanta's Salon",
-      aspect: "portrait"
+      alt: "Rich auburn hair colour makeover at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
     },
     {
-      id: "gal-3",
-      title: "Creative Nail Artistry",
-      category: "Nails & Spa",
-      image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
-      alt: "Delicate artistic gel nail design",
-      aspect: "square"
-    },
-    {
-      id: "gal-4",
-      title: "Precision Hair Sculpting",
-      category: "Hair & Styling",
-      image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80",
-      alt: "Clean modern haircut and grooming styling",
-      aspect: "portrait"
-    },
-    {
-      id: "gal-5",
-      title: "Skin Glow & Rejuvenation",
-      category: "Skin Care",
-      image: "/images/salon/IMG_5026_salon.jpg",
-      alt: "Nourishing facial care and relaxed hydration",
-      aspect: "landscape"
-    },
-    {
-      id: "gal-6",
-      title: "Occasion Hairdo & Curls",
+      id: "gal-hair-6",
+      title: "Special Occasion Waves & Curls",
       category: "Hair & Styling",
       image: "/images/hair-colour/IMG_6797.jpg",
-      alt: "Client's finished hair colour transformation",
-      aspect: "portrait"
+      alt: "Defined occasion curls and colour enhancement at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+
+    // 3. Bridal & Occasion (Real wedding and bridal work at Ajanta's Salon)
+    {
+      id: "gal-bridal-1",
+      title: "Maharashtrian Bridal Grace",
+      category: "Bridal & Occasion",
+      image: "/images/salon/IMG_5025.jpg",
+      alt: "Traditional bridal makeup and floral jewelry by Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center top"
     },
     {
-      id: "gal-7",
-      title: "Luminous Wedding Look",
+      id: "gal-bridal-2",
+      title: "Luminous Wedding Couple Styling",
       category: "Bridal & Occasion",
       image: "/images/salon/IMG_5026_salon.jpg",
-      alt: "Traditional wedding styling by Ajanta's Salon",
-      aspect: "portrait"
+      alt: "Wedding couple in traditional ceremonial attire styled by Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center top"
     },
     {
-      id: "gal-8",
-      title: "Hand & Nail Wellness",
+      id: "gal-bridal-3",
+      title: "Timeless Ceremony Portrait",
+      category: "Bridal & Occasion",
+      image: "/images/salon/IMG_5027.jpg",
+      alt: "Bride and groom outdoor portrait with elegant hair and makeup",
+      aspect: "portrait",
+      objectPosition: "center top"
+    },
+    {
+      id: "gal-bridal-4",
+      title: "Royal Wedding Portrait Styling",
+      category: "Bridal & Occasion",
+      image: "/images/salon/IMG_5028.jpg",
+      alt: "Bride and groom elegant wedding portrait by Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center top"
+    },
+    {
+      id: "gal-bridal-5",
+      title: "Celebration & Sangeet Radiance",
+      category: "Bridal & Occasion",
+      image: "/images/salon/IMG_4974.jpg",
+      alt: "Sangeet occasion styling with custom floral accessories",
+      aspect: "portrait",
+      objectPosition: "center top"
+    },
+
+    // 4. Skin Care (Professional Facial & Dermal Rejuvenation)
+    {
+      id: "gal-skin-1",
+      title: "Rejuvenating Herbal Facial Mask",
+      category: "Skin Care",
+      image: "/images/salon/skin-facial-care.jpg",
+      alt: "Professional skincare therapist applying facial treatment at Ajanta's Salon",
+      aspect: "landscape",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-skin-2",
+      title: "Deep Hydration & Serum Therapy",
+      category: "Skin Care",
+      image: "/images/salon/skin-hydration.jpg",
+      alt: "Restorative skin hydration and targeted dermal serum therapy",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+
+    // 5. Nails & Spa (Artisan Gel Nails & Hand/Foot Wellness)
+    {
+      id: "gal-nails-1",
+      title: "Sculpted Gel Extensions & French Tips",
       category: "Nails & Spa",
-      image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=900&q=80",
-      alt: "Relaxing manicure care and gentle nail polish application",
-      aspect: "landscape"
+      image: "/images/salon/nail-extensions.jpg",
+      alt: "Nail technician crafting delicate French tip gel extensions",
+      aspect: "landscape",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-nails-2",
+      title: "Artisan Tortoise & Gloss Nail Art",
+      category: "Nails & Spa",
+      image: "/images/salon/nail-art.jpg",
+      alt: "Custom hand-painted tortoise shell artisan nail art design",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-nails-3",
+      title: "Floral Botanical Spa Pedicure",
+      category: "Nails & Spa",
+      image: "/images/salon/spa-manicure.jpg",
+      alt: "Aromatic floral soak spa pedicure therapy for soothing relaxation",
+      aspect: "landscape",
+      objectPosition: "center center"
     }
   ],
 

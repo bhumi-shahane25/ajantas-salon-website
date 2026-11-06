@@ -9,7 +9,7 @@ export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('All')
   const [activeLightboxIndex, setActiveLightboxIndex] = useState(null)
 
-  const categories = ['All', 'Hair & Styling', 'Bridal & Occasion', 'Skin Care', 'Nails & Spa']
+  const categories = ['All', 'Hair & Styling', "Men's Grooming", 'Bridal & Occasion', 'Skin Care', 'Nails & Spa']
 
   const filteredItems = activeFilter === 'All'
     ? gallery
@@ -114,6 +114,7 @@ export default function Gallery() {
                     alt={item.alt}
                     aspectRatio={aspect}
                     className="gallery-img"
+                    objectPosition={item.objectPosition || 'center center'}
                   />
                   <div className="gallery-overlay">
                     <div className="gallery-overlay-content">
@@ -168,6 +169,7 @@ export default function Gallery() {
               src={filteredItems[activeLightboxIndex].image}
               alt={filteredItems[activeLightboxIndex].alt}
               className="lightbox-main-img"
+              style={{ objectPosition: filteredItems[activeLightboxIndex].objectPosition || 'center center' }}
             />
             <div className="lightbox-caption">
               <span className="lightbox-cat">{filteredItems[activeLightboxIndex].category}</span>

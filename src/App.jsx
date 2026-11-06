@@ -1,5 +1,4 @@
 import { NavigationProvider, useNavigation } from './context/NavigationContext'
-import AnnouncementBar from './components/AnnouncementBar'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import FloatingActions from './components/FloatingActions'
@@ -33,10 +32,7 @@ function AppContent() {
 
   return (
     <div className="site-wrapper">
-      {/* 1. Top Slim Announcement Bar with telephone shortcut */}
-      <AnnouncementBar />
-
-      {/* 2. Main Sticky Header with Actual Salon Logo & Multi-Page Navigation */}
+      {/* 1. Main Sticky Header with Actual Salon Logo & Multi-Page Navigation */}
       <Navbar />
 
       {/* 3. Multi-Page View Container with smooth transition */}

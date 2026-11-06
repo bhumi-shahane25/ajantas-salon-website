@@ -1,11 +1,13 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { salonData } from '../data/salonData'
+import { useNavigation } from '../context/NavigationContext'
 import ImageWithFallback from './ImageWithFallback'
 import './About.css'
 
 export default function About() {
   const { tag, heading, paragraphs, images } = salonData.about
   const { establishmentYear, productsClaim } = salonData.brand
+  const { navigate } = useNavigation()
 
   return (
     <section id="about" className="section about-section" aria-label="About the Salon">
@@ -18,6 +20,7 @@ export default function About() {
               alt={images.primaryAlt}
               aspectRatio="4/5"
               className="about-image-primary"
+              objectPosition="center top"
             />
             {/* Stamp / Heritage emblem */}
             <div className="about-heritage-stamp">
@@ -32,6 +35,7 @@ export default function About() {
               alt={images.secondaryAlt}
               aspectRatio="1/1"
               className="about-image-secondary"
+              objectPosition="center top"
             />
           </div>
         </div>
@@ -64,10 +68,14 @@ export default function About() {
           </div>
 
           <div className="about-actions">
-            <a href="#services" className="btn btn-primary">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => navigate('/services')}
+            >
               <span>View Services & Specialities</span>
               <ArrowRight size={16} aria-hidden="true" />
-            </a>
+            </button>
           </div>
         </div>
       </div>
