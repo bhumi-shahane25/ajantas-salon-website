@@ -26,7 +26,9 @@ export const salonData = {
     heroHeadline: "A little time for yourself.",
     heroSubheadline: "Thoughtful hair and beauty care to help you look and feel your best. Serving men and women in Nashik with genuine care since 2007.",
     productsClaim: "We prioritise authentic, quality salon products for every hair and skin service.",
-    logo: "/ajantas-salon-logo.png",
+    logo: "/images/ajantas-salon-logo-transparent.png",
+    navbarLogo: "/images/ajantas-salon-logo-transparent.png",
+    footerLogo: "/images/ajantas-salon-footer-logo.png",
     logoAlt: "Official Logo of Ajanta's Salon for He & She",
   },
 
@@ -89,10 +91,10 @@ export const salonData = {
       "Alongside our salon services, we also run beauty, makeup, and hair academy courses, sharing practical salon techniques with aspiring artists right here in Nashik."
     ],
     images: {
-      primary: "/images/salon/IMG_8811_upright.jpg",
-      primaryAlt: "Client hair styling and dimensional colour seen from the back at Ajanta's Salon Nashik",
-      secondary: "/images/salon/IMG_8780_upright.jpg",
-      secondaryAlt: "Client hair styling and luminous blowout at Ajanta's Salon"
+      primary: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80",
+      primaryAlt: "Professional hair and beauty studio interior with warm ambient lighting",
+      secondary: "/images/salon/about-client-hair.jpg",
+      secondaryAlt: "Client with radiant dimensional hair colour and precision styling at Ajanta's Salon"
     }
   },
 
@@ -128,6 +130,7 @@ export const salonData = {
       ],
       image: "/images/hair-colour/IMG_6795.jpg",
       imageAlt: "Client's rich dimensional hair colour transformation at Ajanta's Salon",
+      objectPosition: "center 20%",
       enquiryMessage: "Hello Ajanta's Salon, I would like to enquire about hair colour, spa, or smoothing treatments."
     },
     {

@@ -6,7 +6,7 @@ import './Footer.css'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  const { name, tagline, establishmentYear, logo, logoAlt } = salonData.brand
+  const { name, tagline, establishmentYear, logo, logoAlt, footerLogo } = salonData.brand
   const { primaryAddress } = salonData.location
   const { primaryPhoneDisplay, primaryPhoneTel, secondaryPhoneDisplay, secondaryPhoneTel, whatsappNumber, instagramUrl, instagramHandle, businessProfileUrl } = salonData.contact
   const { services } = salonData
@@ -60,24 +60,17 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="footer-main">
         <div className="container footer-grid">
-          {/* Brand Column with Actual Logo */}
+          {/* Brand Column with Logo */}
           <div className="footer-col footer-col-brand">
             <div className="footer-brand-header">
-              <div className="footer-logo-frame">
-                <img
-                  src={logo}
-                  alt={logoAlt}
-                  className="footer-logo-img"
-                  width="72"
-                  height="72"
-                  loading="lazy"
-                />
-              </div>
-              <div className="footer-brand-meta">
-                <span className="footer-brand-title">{name}</span>
-                <span className="footer-tagline">{tagline}</span>
-                <span className="footer-est-badge">ESTABLISHED {establishmentYear} • NASHIK</span>
-              </div>
+              <img
+                src={footerLogo || logo}
+                alt={logoAlt}
+                className="footer-logo-img"
+                width="126"
+                height="88"
+                loading="lazy"
+              />
             </div>
 
             <p className="footer-bio">

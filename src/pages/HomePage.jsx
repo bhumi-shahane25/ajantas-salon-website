@@ -83,6 +83,7 @@ export default function HomePage() {
               <div
                 key={service.id}
                 className={`featured-service-card reveal reveal-delay-${idx + 1}`}
+                data-service={service.id}
                 onClick={() => navigate('/services', { scrollTo: service.id })}
                 role="button"
                 tabIndex={0}
@@ -95,13 +96,18 @@ export default function HomePage() {
               >
                 <div className="featured-service-img-wrap">
                   <ImageWithFallback
-  src={service.image}
-  alt={service.imageAlt}
-  objectPosition={
-    service.id === "makeup-bridal" ? "center top" : "center"
-  }
-  aspectRatio="16/11"
-/>
+                    src={service.image}
+                    alt={service.imageAlt}
+                    objectPosition={
+                      service.objectPosition ||
+                      (service.id === "makeup-bridal"
+                        ? "center top"
+                        : service.id === "hair-treatments-colour"
+                        ? "center 20%"
+                        : "center")
+                    }
+                    aspectRatio="16/11"
+                  />
                 </div>
                 <div className="featured-service-body">
                   <span className="featured-service-tag">{service.tag}</span>

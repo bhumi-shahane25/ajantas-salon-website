@@ -22,15 +22,16 @@
   gap: 16px;
 }
 
-/* Brand Identity with Actual Logo */
+/* Brand Identity with Transparent Logo */
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
   cursor: pointer;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
+  padding: 4px 0;
+  background: transparent;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .navbar-brand:hover {
@@ -56,7 +57,7 @@
 
 .navbar-brand:hover .brand-logo-frame {
   border-color: var(--color-wine);
-  box-shadow: 0 3px 12px rgba(183, 110, 121, 0.25);
+  box-shadow: 0 3px 12px rgba(158, 88, 104, 0.25);
   transform: scale(1.04);
 }
 
@@ -64,31 +65,12 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  display: block;
+  background: transparent;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.brand-text-wrap {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brand-title {
-  font-family: var(--font-serif);
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: var(--color-wine);
-  letter-spacing: -0.01em;
-}
-
-.brand-subtitle {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  font-weight: 600;
-  margin-top: 2px;
+.navbar-brand:hover .navbar-logo-img {
+  transform: scale(1.02);
 }
 
 /* Desktop Navigation */
@@ -506,18 +488,9 @@
     gap: 5px;
   }
 
-  .brand-logo-frame {
-    width: 42px;
-    height: 42px;
-  }
-
-  .brand-title {
-    font-size: 1.4rem;
-  }
-
-  .brand-subtitle {
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
+  .navbar-logo-img {
+    height: 54px;
+    max-width: 130px;
   }
 }
 
@@ -534,19 +507,9 @@
     gap: 8px;
   }
 
-  .brand-logo-frame {
-    width: 38px;
-    height: 38px;
-    border-radius: 5px;
-  }
-
-  .brand-title {
-    font-size: 1.3rem;
-  }
-
-  .brand-subtitle {
-    font-size: 0.56rem;
-    letter-spacing: 0.1em;
+  .navbar-logo-img {
+    height: 50px;
+    max-width: 120px;
   }
 
   .nav-cta {
@@ -568,22 +531,9 @@
     gap: 6px;
   }
 
-  .navbar-brand {
-    gap: 8px;
-  }
-
-  .brand-logo-frame {
-    width: 36px;
-    height: 36px;
-  }
-
-  .brand-title {
-    font-size: 1.22rem;
-  }
-
-  .brand-subtitle {
-    font-size: 0.52rem;
-    letter-spacing: 0.08em;
+  .navbar-logo-img {
+    height: 46px;
+    max-width: 110px;
   }
 
   .navbar-actions {

@@ -48,6 +48,10 @@
   height: 100%;
 }
 
+#hair-treatments-colour .service-img img {
+  object-position: center 20%;
+}
+
 .service-card-wide .service-img {
   height: 100%;
 }

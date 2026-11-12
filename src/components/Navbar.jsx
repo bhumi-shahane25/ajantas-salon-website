@@ -8,7 +8,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const { name, tagline, logo, logoAlt } = salonData.brand
+  const { name, tagline, logo, logoAlt, navbarLogo } = salonData.brand
   const { primaryPhoneTel, primaryPhoneDisplay } = salonData.contact
   const { currentPath, navigate } = useNavigation()
 
@@ -75,27 +75,21 @@ export default function Navbar() {
   return (
     <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
-        {/* Salon Brand with Actual Logo */}
+        {/* Salon Brand with Logo */}
         <a
           href="/"
           className="navbar-brand"
           onClick={(e) => handleNavClick(e, '/')}
           aria-label={`${name} - Return to Homepage`}
         >
-          <div className="brand-logo-frame">
-            <img
-              src={logo}
-              alt={logoAlt}
-              className="brand-logo-img"
-              width="46"
-              height="46"
-              loading="eager"
-            />
-          </div>
-          <div className="brand-text-wrap">
-            <span className="brand-title">Ajanta's</span>
-            <span className="brand-subtitle">{tagline}</span>
-          </div>
+          <img
+            src={navbarLogo || '/images/ajantas-salon-logo-transparent.png'}
+            alt={name}
+            className="navbar-logo-img"
+            width="96"
+            height="64"
+            loading="eager"
+          />
         </a>
 
         {/* Desktop Navigation Links */}

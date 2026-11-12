@@ -109,6 +109,10 @@
   overflow: hidden;
 }
 
+.featured-service-card[data-service="hair-treatments-colour"] .featured-service-img-wrap img {
+  object-position: center 20%;
+}
+
 .featured-service-card:hover .featured-service-img-wrap img {
   transform: scale(1.06);
 }
