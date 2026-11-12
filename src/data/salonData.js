@@ -441,6 +441,152 @@ export const salonData = {
       alt: "Aromatic floral soak spa pedicure therapy for soothing relaxation",
       aspect: "landscape",
       objectPosition: "center center"
+    },
+
+    // 6. Salon Interiors & New Client Transformations (Shortlisted Additions)
+    {
+      id: "gal-new-1",
+      title: "Modern Salon Ambience & Styling Stations",
+      category: "Hair & Styling",
+      image: "/images/gallery/1.jpg",
+      alt: "Spacious contemporary salon interior with modern styling stations and lighting at Ajanta's Salon",
+      aspect: "landscape",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-5",
+      title: "Golden Honey Spiral Curls & Blowout",
+      category: "Hair & Styling",
+      image: "/images/gallery/5.jpg",
+      alt: "Warm honey blonde defined spiral curls and blowout styling at Ajanta's Salon",
+      aspect: "square",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-6",
+      title: "Glossy Burgundy Wave Finish",
+      category: "Hair & Styling",
+      image: "/images/gallery/6.jpg",
+      alt: "Deep wine burgundy hair colour transformation with textured curls at Ajanta's Salon",
+      aspect: "square",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-7",
+      title: "Silky Smooth Straightened Hair & Shine Therapy",
+      category: "Hair & Styling",
+      image: "/images/gallery/7.jpg",
+      alt: "Client sleek straight hair with glossy keratin shine finish at Ajanta's Salon",
+      aspect: "square",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-8",
+      title: "Electric Cobalt Blue Highlights",
+      category: "Hair & Styling",
+      image: "/images/gallery/8.jpg",
+      alt: "Vibrant electric cobalt blue streak highlights on dark hair at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-13",
+      title: "Luxury Hair Wash & Head Spa Lounges",
+      category: "Hair & Styling",
+      image: "/images/gallery/13.jpg",
+      alt: "Reclining hair wash shampoo stations and steamer setup at Ajanta's Salon",
+      aspect: "landscape",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-15",
+      title: "Dimensional Espresso Balayage Waves",
+      category: "Hair & Styling",
+      image: "/images/gallery/15.jpg",
+      alt: "Long cascading brunette waves with subtle golden espresso balayage at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-16",
+      title: "Classic Men's Haircut & Scissor Work",
+      category: "Men's Grooming",
+      image: "/images/gallery/16.jpg",
+      alt: "Stylists providing precision haircutting and grooming services in the men's section",
+      aspect: "square",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-21",
+      title: "Clean Undercut & Grooming Consultation",
+      category: "Men's Grooming",
+      image: "/images/gallery/21.jpg",
+      alt: "Client mirror portrait showing modern textured side fade and undercut grooming",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-25",
+      title: "Honey Caramel Balayage Smoothing",
+      category: "Hair & Styling",
+      image: "/images/gallery/25.jpg",
+      alt: "Sleek straight hair with multi-tonal caramel and honey highlights at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-27",
+      title: "Warm Chestnut U-Cut & Gloss",
+      category: "Hair & Styling",
+      image: "/images/gallery/27.jpg",
+      alt: "Back view of smooth chestnut brown hair with precision U-cut finish at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-28",
+      title: "Voluminous Mocha Caramel Spiral Curls",
+      category: "Hair & Styling",
+      image: "/images/gallery/28.jpg",
+      alt: "Long layered locks styled in defined spiral curls with caramel highlights at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-30",
+      title: "Men's Precision Scissor Taper & Styling",
+      category: "Men's Grooming",
+      image: "/images/gallery/30.jpg",
+      alt: "Professional barber detailing and shaping client hair at Ajanta's Salon",
+      aspect: "landscape",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-31",
+      title: "Soft Dimensional Balayage Waves",
+      category: "Hair & Styling",
+      image: "/images/gallery/31.jpg",
+      alt: "Natural beachy soft waves with seamless brunette balayage at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-32",
+      title: "Ultra-Long Straight Sleek Makeover",
+      category: "Hair & Styling",
+      image: "/images/gallery/32.jpg",
+      alt: "Full length sleek straightened hair with glossy protective coat at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
+    },
+    {
+      id: "gal-new-33",
+      title: "Brunette Side-Profile Waves & Volume",
+      category: "Hair & Styling",
+      image: "/images/gallery/33.jpg",
+      alt: "Side angle view of voluminous long wavy hair styling at Ajanta's Salon",
+      aspect: "portrait",
+      objectPosition: "center center"
     }
   ],
 
